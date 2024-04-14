@@ -1,166 +1,107 @@
-# 3.24.1 is bundled in Visual Studio 2022 v17.4 3.24.1 is also bundled in CLion
-# as of 2023
 cmake_minimum_required(VERSION 3.23.1)
-include(FetchContent)
 
-# This tells cmake we have goodies in the /cmake folder
-list(APPEND CMAKE_MODULE_PATH
-     "${CMAKE_CURRENT_SOURCE_DIR}/cmake-include/sudara-cmake")
-
-# Make sure to set the same C++ version as you have set in the Projucer
-set(CMAKE_CXX_STANDARD 17)
-
-# Make sure to set the same MacOS deployment target as you have set in the Projucer
-set(CMAKE_OSX_DEPLOYMENT_TARGET "10.13" CACHE STRING "Minimum OS X deployment target")
-
-# If you want to build a universal binary on Mac by default, you may want to include this line
-set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64")
-
-set(PROJECT_NAME "cmake-template-project")
-set(CURRENT_VERSION "0.0.1")
 project(cmake-template-project VERSION 0.0.1)
 
-# Worry not, JUCE's PRODUCT_NAME can have spaces (and is what DAWs will display)
-# You can also just have it be the same thing as PROJECT_NAME You may want to
-# append the major version on the end of this (and PROJECT_NAME) ala:
-# set(PROJECT_NAME "MyPlugin_v${MAJOR_VERSION}") Doing so enables major versions
-# to show up in IDEs and DAWs as separate plugins allowing you to change
-# parameters and behavior without breaking existing user projects
+# Project configuration
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_OSX_DEPLOYMENT_TARGET "10.13" CACHE STRING "Minimum OS X deployment target")
+set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64")
+
+# General setup
+set(PROJECT_NAME "cmake-template-project")
+set(CURRENT_VERSION "0.0.1")
 set(PRODUCT_NAME "cmake-template-project")
-
-# Change me! Used for the MacOS bundle name and Installers
 set(COMPANY_NAME "Viator DSP")
-
-# Change me! Used for the MacOS bundle identifier (and signing)
 set(BUNDLE_ID "com.viator-dsp.cmake-template-project")
-
-# Change me! Set the plugin formats you want built Valid choices: AAX Unity VST
-# VST3 AU AUv3 Standalone
 set(FORMATS Standalone AU VST3)
 
-# Option to build CLAP
-#option(BUILD_CLAP "Build CLAP version of project" OFF)
+# Disable all warnings
+add_definitions(-w)
 
-# JUCE is setup as a submodule in the /JUCE folder Locally, you must run `git
-# submodule update --init --recursive` once and later `git submodule update
-# --remote --merge` to keep it up to date On Github Actions, this is done as a
-# part of actions/checkout
-add_subdirectory(libs/JUCE)
+# Append custom module path
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake-include/sudara-cmake")
 
-FetchContent_Declare(
-        viatordsp-core
-        GIT_REPOSITORY https://github.com/Viator-DSP/viatordsp-core.git
-        GIT_TAG main
-        GIT_PROGRESS TRUE
-        SOURCE_DIR viatordsp-core
-)
-FetchContent_MakeAvailable(viatordsp-core)
-
-juce_add_module(${viatordsp-core_SOURCE_DIR})
-
+# FetchContent or other includes
+include(FetchContent)
 include(CTest)
+
+# JUCE and modules
+add_subdirectory(libs/JUCE)
+juce_add_module(libs/viatordsp-core)
+
+# External libraries
 add_subdirectory(externals)
+
+# Test subdirectory
 add_subdirectory(tests)
 
-# Add any other modules you want modules here, before the juce_add_plugin call
-# juce_add_module(modules/my_module)
-
-# See `docs/CMake API.md` in the JUCE repo for all config options
-juce_add_plugin(
-  "${PROJECT_NAME}"
-
-  # Icons for the standalone app
-  #ICON_BIG "${CMAKE_CURRENT_SOURCE_DIR}/packaging/icon.png"
-
-  COMPANY_NAME "${COMPANY_NAME}"
-
-  BUNDLE_ID "${BUNDLE_ID}"
-  # On MacOS, plugin is copied to ~/Users/yourname/Library/Audio/Plug-Ins/
-  COPY_PLUGIN_AFTER_BUILD TRUE
-  # Change me! A four-character plugin id First character MUST be uppercase for
-  # AU formats
-  PLUGIN_MANUFACTURER_CODE BABE
-  # Change me! A unique four-character plugin id Note: this must have at least
-  # one upper-case character
-  PLUGIN_CODE YOkT
-
-  FORMATS "${FORMATS}"
-  # The name of your final executable This is how it's listed in the DAW This
-  # can be different from PROJECT_NAME and can have spaces! You might want to
-  # use v${MAJOR_VERSION} here once you go to v2...
-  PRODUCT_NAME "${PRODUCT_NAME}"
-
-   # If you don't need MIDI input, set this to FALSE
-  NEEDS_MIDI_INPUT FALSE
-
-   # If you don't need MIDI output, set this to FALSE
-  NEEDS_MIDI_OUTPUT FALSE
-
-   # If you are not building a MIDI effect, set this to FALSE
-  IS_MIDI_EFFECT FALSE
-
- IS_SYNTH FALSE
-
+# Define the plugin
+juce_add_plugin("${PROJECT_NAME}"
+        COMPANY_NAME "${COMPANY_NAME}"
+        BUNDLE_ID "${BUNDLE_ID}"
+        COPY_PLUGIN_AFTER_BUILD TRUE
+        PLUGIN_MANUFACTURER_CODE BABE
+        PLUGIN_CODE YOkT
+        FORMATS ${FORMATS}
+        PRODUCT_NAME "${PRODUCT_NAME}"
+        NEEDS_MIDI_INPUT FALSE
+        NEEDS_MIDI_OUTPUT FALSE
+        IS_MIDI_EFFECT FALSE
+        IS_SYNTH FALSE
 )
 
-# This lets us use our code in both the JUCE targets and our Test target Without
-# running into ODR violations
-add_library(SharedCode INTERFACE
-        tests/my_tests.cpp
-        # source/Global/Globals.h
- )
+# Define SharedCode as an INTERFACE library
+add_library(SharedCode INTERFACE)
 
-juce_generate_juce_header(${PROJECT_NAME})
-
-# C++20, please Use cxx_std_23 for C++23 (as of CMake v 3.20)
+# Set compile features for SharedCode
 target_compile_features(SharedCode INTERFACE cxx_std_20)
 
-# Manually list all .h and .cpp files for the plugin If you are like me, you'll
-# use globs for your sanity. Just ensure you employ CONFIGURE_DEPENDS so the
-# build system picks up changes If you want to appease the CMake gods and avoid
-# globs, manually add files like so: set(SourceFiles Source/PluginEditor.h
-# Source/PluginProcessor.h Source/PluginEditor.cpp Source/PluginProcessor.cpp)
+# Include directories and compile definitions for SharedCode
+target_include_directories(SharedCode INTERFACE
+        "${CMAKE_CURRENT_SOURCE_DIR}/source"
+        "${CMAKE_CURRENT_SOURCE_DIR}/libs/viatordsp-core/core"
+)
+
+set(CMAKE_BUILD_TYPE Debug)
+
+target_compile_definitions(SharedCode INTERFACE
+        JUCE_WEB_BROWSER=1
+        JUCE_USE_CURL=0
+        JUCE_VST3_CAN_REPLACE_VST2=0
+        CMAKE_BUILD_TYPE="${CMAKE_BUILD_TYPE}"
+        VERSION="${CURRENT_VERSION}"
+        JUCE_DISPLAY_SPLASH_SCREEN=0
+        PRODUCT_NAME_WITHOUT_VERSION="cmake-template-plugin"
+)
+
+# Linking libraries
+target_link_libraries(SharedCode INTERFACE viatordsp-core)
+
+# Add sources to the main project
 file(GLOB_RECURSE SourceFiles CONFIGURE_DEPENDS
-     "${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp"
-     "${CMAKE_CURRENT_SOURCE_DIR}/source/*.h")
-target_sources(SharedCode INTERFACE ${SourceFiles})
+        "${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/source/*.h"
+)
 
-# Adds a BinaryData target for embedding assets into the binary
-#include(Assets)
+# Sources to main project
+target_sources("${PROJECT_NAME}" PRIVATE ${SourceFiles})
 
-# This is where you can set preprocessor definitions for JUCE and your plugin
-target_compile_definitions(
-  SharedCode
-  INTERFACE # JUCE_WEB_BROWSER and JUCE_USE_CURL off by default
-            JUCE_WEB_BROWSER=1 # If you set this to 1, add `NEEDS_WEB_BROWSER
-                               # TRUE` to the `juce_add_plugin` call
-            JUCE_USE_CURL=0 # If you set this to 1, add `NEEDS_CURL TRUE` to the
-                            # `juce_add_plugin` call
-            JUCE_VST3_CAN_REPLACE_VST2=0
-            # Uncomment if you are paying for a an Indie/Pro license or
-            # releasing under GPLv3 JUCE_DISPLAY_SPLASH_SCREEN=0 lets the app
-            # known if we're Debug or Release
-            CMAKE_BUILD_TYPE="${CMAKE_BUILD_TYPE}"
-            VERSION="${CURRENT_VERSION}"
-            # JucePlugin_Name is for some reason doesn't use the nicer
-            # PRODUCT_NAME
-            JUCE_DISPLAY_SPLASH_SCREEN=0
-            PRODUCT_NAME_WITHOUT_VERSION="cmake-template-plugin")
-
-target_link_libraries("${PROJECT_NAME}"
-        PRIVATE
+# Link libraries to main project
+target_link_libraries("${PROJECT_NAME}" PRIVATE
         juce::juce_dsp
         juce::juce_audio_utils
         juce::juce_product_unlocking
-        PUBLIC
         juce::juce_recommended_config_flags
         juce::juce_recommended_lto_flags
         juce::juce_recommended_warning_flags
-        viatordsp-core
+        SharedCode
 )
 
-FILE(GLOB_RECURSE ALL_SOURCE_FILES "Source/*.*")
-source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${ALL_SOURCE_FILES})
+# Ensure the main project knows where its sources are
+target_include_directories("${PROJECT_NAME}" PRIVATE
+        "${CMAKE_CURRENT_SOURCE_DIR}/source"
+)
 
-target_include_directories("${PROJECT_NAME}" PRIVATE Source)
-target_link_libraries("${PROJECT_NAME}" PRIVATE SharedCode)
+# Organize source files in IDE
+FILE(GLOB_RECURSE ALL_SOURCE_FILES "source/*.*")
+source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${ALL_SOURCE_FILES})

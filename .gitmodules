@@ -1,0 +1,3 @@
+[submodule "libs/viatordsp-core"]
+	path = libs/viatordsp-core
+	url = https://github.com/Viator-DSP/viatordsp-core.git
