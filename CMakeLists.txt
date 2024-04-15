@@ -27,7 +27,7 @@ include(CTest)
 
 # JUCE and modules
 add_subdirectory(libs/JUCE)
-juce_add_module(libs/viatordsp-core)
+add_subdirectory(libs/viatordsp-core)
 
 # External libraries
 add_subdirectory(externals)
@@ -60,6 +60,7 @@ target_compile_features(SharedCode INTERFACE cxx_std_20)
 target_include_directories(SharedCode INTERFACE
         "${CMAKE_CURRENT_SOURCE_DIR}/source"
         "${CMAKE_CURRENT_SOURCE_DIR}/libs/viatordsp-core/core"
+        "${CMAKE_CURRENT_SOURCE_DIR}/libs/JUCE/modules"
 )
 
 set(CMAKE_BUILD_TYPE Debug)
@@ -75,7 +76,7 @@ target_compile_definitions(SharedCode INTERFACE
 )
 
 # Linking libraries
-target_link_libraries(SharedCode INTERFACE viatordsp-core)
+#target_link_libraries(SharedCode INTERFACE viatordsp-core)
 
 # Add sources to the main project
 file(GLOB_RECURSE SourceFiles CONFIGURE_DEPENDS
@@ -101,7 +102,3 @@ target_link_libraries("${PROJECT_NAME}" PRIVATE
 target_include_directories("${PROJECT_NAME}" PRIVATE
         "${CMAKE_CURRENT_SOURCE_DIR}/source"
 )
-
-# Organize source files in IDE
-FILE(GLOB_RECURSE ALL_SOURCE_FILES "source/*.*")
-source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${ALL_SOURCE_FILES})

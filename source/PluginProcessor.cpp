@@ -155,8 +155,6 @@ void PluginProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
     process_spec.numChannels = static_cast<unsigned int>(getTotalNumOutputChannels());
     process_spec.maximumBlockSize = static_cast<unsigned int>(samplesPerBlock);
 
-    clipper_module.prepare(process_spec);
-    clipper_module.set_clipper_parameters(0.0, 0.0, 100.0);
 }
 
 void PluginProcessor::releaseResources()
@@ -190,10 +188,8 @@ void PluginProcessor::processBlock(juce::AudioBuffer<float> &buffer,
                                    juce::MidiBuffer &midiMessages)
 {
     juce::ignoreUnused(midiMessages);
-
     updateParameters();
 
-    clipper_module.processBuffer(buffer);
 }
 
 //==============================================================================
