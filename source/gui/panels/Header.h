@@ -29,7 +29,7 @@ public:
     // bool getDoesPresetFolderExist(){return _navbar.getDoesPresetFolderExist();};
     // NavBar& getNavBar(){return _navbar;};
     // viator_core::Dial& getMacroDial(){return _macroDial;};
-    // viator_core::TextButton& getManualButton(){return _manualButton;};
+    viator_core::TextButton& get_extras_button() {return extras_button;}
     
 private:
     PluginProcessor& audioProcessor;
@@ -40,7 +40,7 @@ private:
     //viator_core::Dial _macroDial;
     // std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> _macroAttachment;
     
-     viator_core::TextButton _manualButton;
+     viator_core::TextButton extras_button;
     
      viator_core::Menu _hqMenu;
      viator_core::Menu _stereoMenu;

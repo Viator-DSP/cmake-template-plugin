@@ -11,18 +11,24 @@ Header::Header(PluginProcessor& p) : audioProcessor(p), _navbar(audioProcessor)
     
      setOversamplingMenuProps();
      setStereoMenuProps();
-    
-     _manualButton.getButton().setButtonText("?");
-     _manualButton.setViatorTooltip("Opens/closes the included user manual for Duplex Comp.");
-     _manualButton.getButton().setColour(juce::TextButton::ColourIds::buttonColourId, viator_core::Colors::getViatorBGLightColor());
-     _manualButton.getButton().setColour(juce::ComboBox::ColourIds::outlineColourId, viator_core::Colors::getOutlineColor());
-     _manualButton.getButton().setColour(juce::TextButton::ColourIds::textColourOffId, viator_core::Colors::getViatorTextColor());
-     _manualButton.getButton().setColour(juce::TextButton::ColourIds::textColourOnId, viator_core::Colors::getViatorTextColor());
-     _manualButton.getButton().setClickingTogglesState(true);
-     addAndMakeVisible(_manualButton);
-     _manualButton.getButton().onClick = [this]()
+
+    extras_button.getButton().setButtonText("?");
+    extras_button.setViatorTooltip("Opens/closes the included user manual for Duplex Comp.");
+    extras_button.getButton().setColour(juce::TextButton::ColourIds::buttonColourId,
+                                        viator_core::Colors::getViatorBGLightColor());
+    extras_button.getButton().setColour(juce::TextButton::ColourIds::buttonOnColourId,
+                                        viator_core::Colors::getViatorBGLightColor().brighter(0.5));
+    extras_button.getButton().setColour(juce::ComboBox::ColourIds::outlineColourId,
+                                        viator_core::Colors::getOutlineColor());
+    extras_button.getButton().setColour(juce::TextButton::ColourIds::textColourOffId,
+                                        viator_core::Colors::getViatorTextColor());
+    extras_button.getButton().setColour(juce::TextButton::ColourIds::textColourOnId,
+                                        viator_core::Colors::getPrimaryBGColor());
+    extras_button.getButton().setClickingTogglesState(true);
+     addAndMakeVisible(extras_button);
+    extras_button.getButton().onClick = [this]()
      {
-         //getParentComponent()->resized();
+         sendActionMessage("extras_button_clicked");
      };
     
      _dropShadow = std::make_unique<juce::DropShadower>(juce::DropShadow(juce::Colours::black.withAlpha(0.5f), 10, {}));
@@ -96,7 +102,7 @@ void Header::resized()
 
     compWidth *= 0.5;
     compX = _stereoMenu.getRight() + padding;
-    _manualButton.setBounds(compX, compY, compWidth, compHeight);
+    extras_button.setBounds(compX, compY, compWidth, compHeight);
     
     // if (getParentComponent() == nullptr) return;
     

@@ -24,7 +24,6 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake-include/sudara-
 # JUCE and modules
 include(JUCEDefaults)
 add_subdirectory(libs/JUCE)
-#add_subdirectory(libs/viatordsp-core/viator_modules)
 
 # External libraries
 add_subdirectory(externals)
@@ -56,7 +55,8 @@ add_library(SharedCode INTERFACE
         source/gui/lookandfeel/Gradient.h
         source/gui/lookandfeel/MenuLAF.h
         source/gui/components/PresetBrowser.h
-        source/gui/panels/NavBar.h)
+        source/gui/panels/NavBar.h
+        source/gui/panels/ExtrasPage.h)
 
 # Set compile features for SharedCode
 target_compile_features(SharedCode INTERFACE cxx_std_20)
@@ -81,9 +81,6 @@ target_compile_definitions(SharedCode INTERFACE
         PRODUCT_NAME_WITHOUT_VERSION="cmake-template-plugin"
 )
 
-# Linking libraries
-#target_link_libraries(SharedCode INTERFACE viatordsp-core)
-
 # Add sources to the main project
 file(GLOB_RECURSE SourceFiles CONFIGURE_DEPENDS
         "${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp"
@@ -100,6 +97,7 @@ target_link_libraries("${PROJECT_NAME}" PRIVATE
         juce::juce_dsp
         juce::juce_audio_utils
         juce::juce_product_unlocking
+        PUBLIC
         juce::juce_recommended_config_flags
         juce::juce_recommended_lto_flags
         juce::juce_recommended_warning_flags
