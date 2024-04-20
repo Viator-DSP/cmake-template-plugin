@@ -4,31 +4,26 @@
 namespace viator_core
 {
 
-Header::Header(PluginProcessor& p) : audioProcessor(p)//, _navbar(audioProcessor)
+Header::Header(PluginProcessor& p) : audioProcessor(p), _navbar(audioProcessor)
 {
-//     addAndMakeVisible(_navbar);
+     addAndMakeVisible(_navbar);
 //     _navbar.addChangeListener(this);
     
-//     _macroDial.addMouseListener(this, false);
-//     _macroDial.setViatorTooltip("Macro dial to map in the settings window.");
-//     //_macroAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.getViatorTreeState(), "macroID", _macroDial);
-//     addAndMakeVisible(_macroDial);
+     setOversamplingMenuProps();
+     setStereoMenuProps();
     
-//     setOversamplingMenuProps();
-//     setStereoMenuProps();
-    
-//     _manualButton.getButton().setButtonText("?");
-//     _manualButton.setViatorTooltip("Opens/closes the included user manual for Duplex Comp.");
-//     _manualButton.getButton().setColour(juce::TextButton::ColourIds::buttonColourId, viator_core::Colors::getViatorBGLightColor());
-//     _manualButton.getButton().setColour(juce::ComboBox::ColourIds::outlineColourId, viator_core::Colors::getOutlineColor());
-//     _manualButton.getButton().setColour(juce::TextButton::ColourIds::textColourOffId, viator_core::Colors::getViatorTextColor());
-//     _manualButton.getButton().setColour(juce::TextButton::ColourIds::textColourOnId, viator_core::Colors::getViatorTextColor());
-//     _manualButton.getButton().setClickingTogglesState(true);
-//     addAndMakeVisible(_manualButton);
-//     _manualButton.getButton().onClick = [this]()
-//     {
-//         getParentComponent()->resized();
-//     };
+     _manualButton.getButton().setButtonText("?");
+     _manualButton.setViatorTooltip("Opens/closes the included user manual for Duplex Comp.");
+     _manualButton.getButton().setColour(juce::TextButton::ColourIds::buttonColourId, viator_core::Colors::getViatorBGLightColor());
+     _manualButton.getButton().setColour(juce::ComboBox::ColourIds::outlineColourId, viator_core::Colors::getOutlineColor());
+     _manualButton.getButton().setColour(juce::TextButton::ColourIds::textColourOffId, viator_core::Colors::getViatorTextColor());
+     _manualButton.getButton().setColour(juce::TextButton::ColourIds::textColourOnId, viator_core::Colors::getViatorTextColor());
+     _manualButton.getButton().setClickingTogglesState(true);
+     addAndMakeVisible(_manualButton);
+     _manualButton.getButton().onClick = [this]()
+     {
+         //getParentComponent()->resized();
+     };
     
      _dropShadow = std::make_unique<juce::DropShadower>(juce::DropShadow(juce::Colours::black.withAlpha(0.5f), 10, {}));
      _dropShadow->setOwner(this);
@@ -84,23 +79,24 @@ Header::Header(PluginProcessor& p) : audioProcessor(p)//, _navbar(audioProcessor
 
 void Header::resized()
 {
-    // auto x      = getWidth() * 0.285;
-    // auto y      = getHeight() * 0.225;
-    // auto width  = getWidth() * 0.45;
-    // auto height = getHeight() * 0.55;
-    // auto padding = getWidth() * 0.005;
-    // _navbar.setBounds(x, y - 5, width, height + 10);
-    
-    // x = _navbar.getRight() + padding;
-    // width = getWidth() * 0.065;
-    // _hqMenu.setBounds(x, y, width, height);
-    
-    // x += width + padding;
-    // _stereoMenu.setBounds(x, y, width, height);
-    
-    // width *= 0.5;
-    // x = getWidth() - width - 10;
-    // _manualButton.setBounds(x, y, width, height);
+     auto compX = getWidth() * 0.285;
+     auto compY = getHeight() * 0.225;
+     auto compWidth = getWidth() * 0.45;
+     auto compHeight = getHeight() * 0.55;
+     auto padding = getWidth() * 0.007;
+
+     _navbar.setBounds(compX, compY, compWidth, compHeight);
+
+    compX = _navbar.getRight() + padding;
+    compWidth = getWidth() * 0.095;
+     _hqMenu.setBounds(compX, compY, compWidth, compHeight);
+
+    compX = _hqMenu.getRight() + padding;
+     _stereoMenu.setBounds(compX, compY, compWidth, compHeight);
+
+    compWidth *= 0.5;
+    compX = _stereoMenu.getRight() + padding;
+    _manualButton.setBounds(compX, compY, compWidth, compHeight);
     
     // if (getParentComponent() == nullptr) return;
     
@@ -113,34 +109,34 @@ void Header::resized()
     // }
 }
 
-// void Header::setOversamplingMenuProps()
-// {
-//     juce::StringArray choices = {"HQ Off", "HQ X2", "HQ X4", "HQ X8"};
-//     for (int i = 0; i < choices.size(); ++i)
-//     {
-//         _hqMenu.addItem(choices[i], i + 1);
-//     }
+ void Header::setOversamplingMenuProps()
+ {
+     juce::StringArray choices = {"HQ Off", "HQ X2", "HQ X4", "HQ X8"};
+     for (int i = 0; i < choices.size(); ++i)
+     {
+         _hqMenu.addItem(choices[i], i + 1);
+     }
     
-//     _hqMenu.setMenuJustification(juce::Justification::centredLeft);
+     _hqMenu.setMenuJustification(juce::Justification::centredLeft);
     
-//     addAndMakeVisible(_hqMenu);
-//     //_oversamplingAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(audioProcessor.getViatorTreeState(), ViatorParameters::oversamplingID, _hqMenu);
-// }
+     addAndMakeVisible(_hqMenu);
+     //_oversamplingAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(audioProcessor.getViatorTreeState(), ViatorParameters::oversamplingID, _hqMenu);
+ }
 
-// void Header::setStereoMenuProps()
-// {
-//     juce::StringArray choices = {"Stereo", "Mono", "Mid", "Side"};
-//     for (int i = 0; i < choices.size(); ++i)
-//     {
-//         _stereoMenu.addItem(choices[i], i + 1);
-//     }
+ void Header::setStereoMenuProps()
+ {
+     juce::StringArray choices = {"Stereo", "Mono", "Mid", "Side"};
+     for (int i = 0; i < choices.size(); ++i)
+     {
+         _stereoMenu.addItem(choices[i], i + 1);
+     }
     
-//     _stereoMenu.setMenuJustification(juce::Justification::centredLeft);
+     _stereoMenu.setMenuJustification(juce::Justification::centredLeft);
     
-//     addAndMakeVisible(_stereoMenu);
-//     //_stereoAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(audioProcessor.getViatorTreeState(), ViatorParameters::stereoModeID, _stereoMenu);
-//     _stereoMenu.setVisible(false);
-// }
+     addAndMakeVisible(_stereoMenu);
+     //_stereoAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(audioProcessor.getViatorTreeState(), ViatorParameters::stereoModeID, _stereoMenu);
+     //_stereoMenu.setVisible(false);
+ }
 
 void Header::changeListenerCallback(juce::ChangeBroadcaster *source)
 {

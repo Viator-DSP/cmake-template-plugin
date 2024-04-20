@@ -4,6 +4,8 @@
 #include <juce_audio_processors/juce_audio_processors.h>
 #include <juce_dsp/juce_dsp.h>
 
+#include "gui/components/PresetBrowser.h"
+
 class PluginProcessor : public juce::AudioProcessor, public juce::AudioProcessorValueTreeState::Listener
 
 {
@@ -37,9 +39,11 @@ public:
     void getStateInformation(juce::MemoryBlock &destData) override;
     void setStateInformation(const void *data, int sizeInBytes) override;
 
-    juce::AudioProcessorValueTreeState &getTreeState() { return _treeState; };
-    juce::ValueTree &getVariableTree() { return variableTree; };
-    viator_core::ParameterData::Params &getParameterMap() { return _parameterMap; };
+    juce::AudioProcessorValueTreeState &get_tree_state() { return _treeState; }
+    juce::ValueTree &getVariableTree() { return variableTree; }
+    viator_core::ParameterData::Params &getParameterMap() { return _parameterMap; }
+
+    viator_core::PresetBrowser& get_preset_browser() {return preset_browser;}
 
 private:
     // tree state and parameter stuff
@@ -55,6 +59,8 @@ private:
     void updateParameters();
 
     juce::dsp::ProcessSpec process_spec;
+
+    viator_core::PresetBrowser preset_browser;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(PluginProcessor)
 };

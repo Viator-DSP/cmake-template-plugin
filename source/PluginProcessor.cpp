@@ -11,7 +11,8 @@ PluginProcessor::PluginProcessor()
                          .withOutput("Output", juce::AudioChannelSet::stereo(), true)
 #endif
                          ),
-      _treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
+      _treeState(*this, nullptr, "PARAMETERS", createParameterLayout()),
+      preset_browser(*this)
 {
     for (int i = 0; i < _parameterMap.getSliderParams().size(); i++)
     {

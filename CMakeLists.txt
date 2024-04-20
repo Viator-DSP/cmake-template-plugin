@@ -47,11 +47,16 @@ juce_add_plugin("${PROJECT_NAME}"
         IS_SYNTH FALSE
 )
 
+add_compile_definitions(JUCE_PROJECT_NAME="${PROJECT_NAME}")
+
 # Define SharedCode as an INTERFACE library
 add_library(SharedCode INTERFACE
         source/gui/panels/Header.h
         source/gui/lookandfeel/Colors.h
-        source/gui/lookandfeel/Gradient.h)
+        source/gui/lookandfeel/Gradient.h
+        source/gui/lookandfeel/MenuLAF.h
+        source/gui/components/PresetBrowser.h
+        source/gui/panels/NavBar.h)
 
 # Set compile features for SharedCode
 target_compile_features(SharedCode INTERFACE cxx_std_20)

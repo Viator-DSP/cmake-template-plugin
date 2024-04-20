@@ -5,8 +5,9 @@
 #include <juce_gui_extra/juce_gui_extra.h>
 #include "BinaryData.h"
 #include "../lookandfeel/Colors.h"
-//#include "../components/NavBar.h"
-//#include "../widgets/Dial.h"
+#include "NavBar.h"
+#include "../widgets/TextButton.h"
+#include "../widgets/Menu.h"
 
 class PluginProcessor;
 
@@ -34,19 +35,19 @@ private:
     PluginProcessor& audioProcessor;
     juce::Image _logo;
     
-    //NavBar _navbar;
+    NavBar _navbar;
     
     //viator_core::Dial _macroDial;
     // std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> _macroAttachment;
     
-    // viator_core::TextButton _manualButton;
+     viator_core::TextButton _manualButton;
     
-    // viator_core::Menu _hqMenu;
-    // viator_core::Menu _stereoMenu;
+     viator_core::Menu _hqMenu;
+     viator_core::Menu _stereoMenu;
     // std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment> _oversamplingAttachment;
     // std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment> _stereoAttachment;
-    // void setOversamplingMenuProps();
-    // void setStereoMenuProps();
+     void setOversamplingMenuProps();
+     void setStereoMenuProps();
     
      void changeListenerCallback(juce::ChangeBroadcaster* source) override;
     
