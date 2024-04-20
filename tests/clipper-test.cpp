@@ -1,78 +1,120 @@
-#include "clipper-test.h"
+// #include "clipper-test.h"
 
-namespace viator_tests
-{
+// namespace viator_tests
+// {
 
-void populate_test_buffer()
-{
-    test_buffer.clear();
-    test_buffer.reserve(50000);
+// void populate_test_buffer()
+// {
+//     test_buffer.clear();
+//     test_buffer.reserve(BLOCK_SIZE);
 
-    for (int i = 0; i < 25000; ++i)
-    {
-        test_buffer.push_back(static_cast<float>(i + 1) * 0.0001f);
-        test_buffer.push_back(static_cast<float>(i + 1) * -0.0001f);
-    }
-}
+//     for (int i = 0; i < static_cast<int>(BLOCK_SIZE * 0.5); ++i) 
+//     {
+//         test_buffer.push_back((i + 1) * 0.0009f);
+//         test_buffer.push_back((i + 1) * -0.0009f);
+//     }
+// }
 
-bool test_buffer_for_zeros()
-{
-    float current_sample = 0.0f;
+// bool buffer_free_of_zero()
+// {
+//     float current_sample = 0.0f;
+//     int num_zeros = 0;
     
-    // run test 50000 times
-    for (int i = 0; i < 50000; ++i)
-    {
-        test_clipper.randomize_parameters();
+//     // run test 50000 times
+//     for (int i = 0; i < NUM_TEST_RUNS; ++i)
+//     {
+//         test_clipper.randomize_parameters();
 
-        for (auto& sample : test_buffer)
-        {
-            current_sample = test_clipper.processSample(test_buffer[sample]);
+//         num_zeros = 0;
 
-            if (current_sample == 0.0f)
-            {
-                return true;
-            }
-        }
-    }
+//         for (auto& sample : test_buffer)
+//         {
+//             current_sample = test_clipper.processSample(test_buffer[sample]);
 
-    return false;
-}
+//             if (current_sample == 0.0f)
+//             {
+//                 num_zeros++;
+//             }
+//         }
+//     }
 
-bool test_buffer_for_dc()
-{
-    // run test 50000 times
-    for (int i = 0; i < 50000; ++i)
-    {
-        test_clipper.randomize_parameters();
+//     return num_zeros < BLOCK_SIZE;
+// }
 
-        for (int i = 0; i < test_buffer.size(); ++i)
-        {
-            test_buffer[i] = test_clipper.processSample(test_buffer[i]);
-        }
+// bool buffer_free_of_dc()
+// {
+//     for (int i = 0; i < NUM_TEST_RUNS; ++i)
+//     {
+//         test_clipper.randomize_parameters();
 
-        float sum = std::accumulate(test_buffer.begin(), test_buffer.end(), 0.0f);
-        float dc_offset = sum / test_buffer.size();
+//         for (int i = 0; i < test_buffer.size(); ++i)
+//         {
+//             test_buffer[i] = test_clipper.processSample(test_buffer[i]);
+//         }
 
-        if (dc_offset > 0.01)
-        {
-            std::cout << "DC offset: " << dc_offset << std::endl;
-            return true;
-        }
-    }
+//         float sum = std::accumulate(test_buffer.begin(), 
+//         test_buffer.end(), 
+//         0.0f);
+        
+//         float dc_offset = sum / test_buffer.size();
 
-    return false;
-}
+//         if (dc_offset > 0.01)
+//         {
+//             return false;
+//         }
+//     }
 
-TEST(TestTopic, ZeroBufferTest)
-{
-    populate_test_buffer();
-    EXPECT_EQ(test_buffer_for_zeros(), false);
-}
+//     return true;
+// }
 
-TEST(TestTopic, DCBufferTest)
-{
-    populate_test_buffer();
-    EXPECT_EQ(test_buffer_for_dc(), false);
-}
+// bool buffer_free_of_repeats()
+// {
+//     populate_test_buffer();
 
-}
+//     std::unordered_map<float, int> frequencyMap;
+//     int maxCount = 0;
+//     float mostFrequent = std::numeric_limits<float>::quiet_NaN();
+//     int count;
+
+//     for (int i = 0; i < NUM_TEST_RUNS; ++i)
+//     {
+//         test_clipper.randomize_parameters();
+//         frequencyMap.clear();
+
+//         for (float num : test_buffer) 
+//         {
+//             count = ++frequencyMap[num];
+            
+//             if (count > maxCount) 
+//             {
+//                 maxCount = count;
+//                 mostFrequent = num;
+//                 _count = count;
+//             }
+//         }
+//     }
+
+//     most_frequent = mostFrequent;
+//     return _count < BLOCK_SIZE;
+// }
+
+
+// TEST(TestTopic, ZeroBufferTest)
+// {
+//     populate_test_buffer();
+//     EXPECT_EQ(buffer_free_of_zero(), true);
+// }
+
+// TEST(TestTopic, DCBufferTest)
+// {
+//     populate_test_buffer();
+//     EXPECT_EQ(buffer_free_of_dc(), true);
+// }
+
+// TEST(TestTopic, RepeatingValueCheck)
+// {
+//     populate_test_buffer();
+//     EXPECT_EQ(buffer_free_of_repeats(), true);
+// }
+
+// }

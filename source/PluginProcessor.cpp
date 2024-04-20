@@ -200,8 +200,8 @@ bool PluginProcessor::hasEditor() const
 
 juce::AudioProcessorEditor *PluginProcessor::createEditor()
 { // Use generic gui for editor for now
-    // return new PluginEditor(*this);
-    return new juce::GenericAudioProcessorEditor(*this);
+    return new PluginEditor(*this);
+    //return new juce::GenericAudioProcessorEditor(*this);
 }
 
 //==============================================================================

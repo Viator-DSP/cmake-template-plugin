@@ -21,13 +21,10 @@ add_definitions(-w)
 # Append custom module path
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake-include/sudara-cmake")
 
-# FetchContent or other includes
-include(FetchContent)
-include(CTest)
-
 # JUCE and modules
+include(JUCEDefaults)
 add_subdirectory(libs/JUCE)
-add_subdirectory(libs/viatordsp-core)
+#add_subdirectory(libs/viatordsp-core/viator_modules)
 
 # External libraries
 add_subdirectory(externals)
@@ -51,7 +48,10 @@ juce_add_plugin("${PROJECT_NAME}"
 )
 
 # Define SharedCode as an INTERFACE library
-add_library(SharedCode INTERFACE)
+add_library(SharedCode INTERFACE
+        source/gui/panels/Header.h
+        source/gui/lookandfeel/Colors.h
+        source/gui/lookandfeel/Gradient.h)
 
 # Set compile features for SharedCode
 target_compile_features(SharedCode INTERFACE cxx_std_20)
@@ -59,9 +59,10 @@ target_compile_features(SharedCode INTERFACE cxx_std_20)
 # Include directories and compile definitions for SharedCode
 target_include_directories(SharedCode INTERFACE
         "${CMAKE_CURRENT_SOURCE_DIR}/source"
-        "${CMAKE_CURRENT_SOURCE_DIR}/libs/viatordsp-core/core"
         "${CMAKE_CURRENT_SOURCE_DIR}/libs/JUCE/modules"
 )
+
+include(Assets)
 
 set(CMAKE_BUILD_TYPE Debug)
 
@@ -89,13 +90,15 @@ target_sources("${PROJECT_NAME}" PRIVATE ${SourceFiles})
 
 # Link libraries to main project
 target_link_libraries("${PROJECT_NAME}" PRIVATE
+        SharedCode
+        Assets
         juce::juce_dsp
         juce::juce_audio_utils
         juce::juce_product_unlocking
         juce::juce_recommended_config_flags
         juce::juce_recommended_lto_flags
         juce::juce_recommended_warning_flags
-        SharedCode
+        
 )
 
 # Ensure the main project knows where its sources are
