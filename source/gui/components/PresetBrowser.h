@@ -5,6 +5,7 @@
 #include "../widgets/TextButton.h"
 #include "../widgets/Menu.h"
 #include "../lookandfeel/Colors.h"
+#include <juce_gui_extra/juce_gui_extra.h>
 
 class PluginProcessor;
 

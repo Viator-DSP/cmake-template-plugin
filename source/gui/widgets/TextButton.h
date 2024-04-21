@@ -2,6 +2,7 @@
 #ifndef TextButton_h
 #define TextButton_h
 #include "../lookandfeel/TextButtonLAF.h"
+#include "../lookandfeel/Colors.h"
 
 namespace viator_core
 {

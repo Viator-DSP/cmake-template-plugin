@@ -104,7 +104,7 @@ void Header::initExtrasButton()
     extras_button.getButton().setColour(juce::TextButton::ColourIds::buttonColourId,
                                         viator_core::Colors::getViatorBGLightColor());
     extras_button.getButton().setColour(juce::TextButton::ColourIds::buttonOnColourId,
-                                        viator_core::Colors::getViatorBGLightColor().brighter(0.5));
+                                        viator_core::Colors::getViatorTextColor());
     extras_button.getButton().setColour(juce::ComboBox::ColourIds::outlineColourId,
                                         viator_core::Colors::getOutlineColor());
     extras_button.getButton().setColour(juce::TextButton::ColourIds::textColourOffId,

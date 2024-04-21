@@ -8,8 +8,14 @@ PluginEditor::PluginEditor(PluginProcessor &p)
 
     addAndMakeVisible(extras_page);
 
+    test_slider.setSliderStyle(juce::Slider::RotaryVerticalDrag);
+    test_slider.setTextBoxStyle(juce::Slider::TextBoxBelow, false, 64, 32);
+    test_attach = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audio_processor.get_tree_state(), "outputID", test_slider);
+    addAndMakeVisible(test_slider);
+
     juce::ignoreUnused(audio_processor);
-    setSize(800, 452);
+    auto mult = 1.5;
+    setSize(800 * mult, 452 * mult);
     setResizable(true, true);
     getConstrainer()->setFixedAspectRatio(1.618);
     setResizeLimits(600, 300, 1440, 720);
@@ -23,18 +29,10 @@ void PluginEditor::paint(juce::Graphics &g)
 {
     // background
     auto rect = getLocalBounds();
-    auto bgColor = viator_core::Colors::getPrimaryBGColor();
+    auto bgColor = viator_core::Colors::getPrimaryBGColor().darker(1.0);
     auto radType = viator_core::Gradient::RectShape::kRounded;
-    auto contrast = 0.025f;
+    auto contrast = 0.05f;
     viator_core::Gradient::addRadialGradient(g, bgColor, rect, radType, contrast);
-
-    auto bg_image = juce::ImageCache::getFromMemory(BinaryData::naturalwood_jpeg, BinaryData::naturalwood_jpegSize);
-    g.drawImageWithin(bg_image,
-                      0,
-                      0,
-                      getWidth(),
-                      getHeight(),
-                      juce::RectanglePlacement::stretchToFit);
 }
 
 void PluginEditor::resized()
@@ -52,6 +50,8 @@ void PluginEditor::resized()
     compHeight = static_cast<int>(getHeight() * 0.84);
     auto should_show_extras = header_comp.get_extras_button().getButton().getToggleState();
     extras_page.setBounds(compX, compY, compWidth * should_show_extras, compHeight * should_show_extras);
+
+    test_slider.setBounds(getLocalBounds().withSizeKeepingCentre(getWidth() * 0.3, getWidth() * 0.3));
 }
 
 void PluginEditor::actionListenerCallback(const juce::String &message)

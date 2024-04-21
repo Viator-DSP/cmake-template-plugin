@@ -23,6 +23,12 @@ PluginProcessor::PluginProcessor()
     {
         _treeState.addParameterListener(_parameterMap.getButtonParams()[i].paramID, this);
     }
+
+    using presetType = viator_core::PresetBrowser::PresetType;
+    get_preset_browser().createPresetFolder();
+    get_preset_browser().prepareFactoryMenu();
+    //get_preset_browser().addFactoryFiles(BinaryData::MixBusAggressiveMix_xml, BinaryData::MixBusAggressiveMix_xmlSize, "Mix Bus - Aggressive", presetType::kMix);
+    get_preset_browser().populateMenu();
 }
 
 PluginProcessor::~PluginProcessor()

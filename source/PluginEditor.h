@@ -29,5 +29,8 @@ private:
 
     viator_core::ExtrasPage extras_page;
 
+    juce::Slider test_slider;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> test_attach;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PluginEditor)
 };
