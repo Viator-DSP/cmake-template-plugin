@@ -11,45 +11,34 @@ namespace viator_core
 class NavBar  : public juce::Component, public juce::ChangeBroadcaster
 {
 public:
-    NavBar(PluginProcessor&);
-    ~NavBar() override;
+    explicit NavBar(PluginProcessor&);
+    ~NavBar() override = default;
     
-    void paint (juce::Graphics&) override;
     void resized() override;
     
-    bool isSettingsActive();
     void setBGColor(juce::Colour newBGColor);
     
-    bool getSettingsPagePower(){return _buttons[2]->getButton().getToggleState();};
-    //void createPresetFolder(){audioProcessor.getPresetBrowser().createPresetFolder();};
-    //bool getDoesPresetFolderExist(){return audioProcessor.getPresetBrowser().getDoesPresetFolderExist();};
-    
-    viator_core::TextButton& getLoadButton(){return *_buttons[getButtonIndex("Load")];};
-    viator_core::TextButton& getSaveButton(){return *_buttons[getButtonIndex("Save")];};
-    
+    //void createPresetFolder(){audio_processor.getPresetBrowser().createPresetFolder();};
+    //bool getDoesPresetFolderExist(){return audio_processor.getPresetBrowser().getDoesPresetFolderExist();};
+
 private:
     PluginProcessor& audioProcessor;
     
     // buttons
-    juce::OwnedArray<viator_core::TextButton> _buttons;
-    juce::StringArray _buttonNameTexts =
+    juce::OwnedArray<viator_core::TextButton> preset_buttons;
+    void initButtons();
+    juce::StringArray preset_button_names =
     {
         "Load", "Save", "Settings"
     };
-    
-    // buttons
-    void setButtonProps();
-    void initButtons();
-    int getButtonIndex(const juce::String& name);
-    
-private:
-    std::unique_ptr<juce::FileChooser> _myChooser;
-    
-    const float _shadowAlpha = 0.25f;
-    juce::Colour _bgColor = juce::Colour::fromRGB(60, 60, 73).brighter(0.1);
-    const int _numButtons = 3;
-    
-    bool _initialized = false;
+
+    // file chooser
+    std::unique_ptr<juce::FileChooser> file_chooser;
+
+    // misc variables
+    const float shadow_alpha = 0.25f;
+    juce::Colour background_color = juce::Colour::fromRGB(60, 60, 73).brighter(0.1);
+    const int num_buttons = 3;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (NavBar)
 };

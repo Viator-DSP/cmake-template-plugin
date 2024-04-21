@@ -26,7 +26,7 @@ include(JUCEDefaults)
 add_subdirectory(libs/JUCE)
 
 # External libraries
-add_subdirectory(externals)
+#add_subdirectory(externals)
 
 # Test subdirectory
 add_subdirectory(tests)

@@ -4,35 +4,17 @@
 namespace viator_core
 {
 
-Header::Header(PluginProcessor& p) : audioProcessor(p), _navbar(audioProcessor)
+Header::Header(PluginProcessor& p) : audio_processor(p), nav_bar(audio_processor)
 {
-     addAndMakeVisible(_navbar);
-//     _navbar.addChangeListener(this);
+     addAndMakeVisible(nav_bar);
+//     nav_bar.addChangeListener(this);
     
-     setOversamplingMenuProps();
-     setStereoMenuProps();
-
-    extras_button.getButton().setButtonText("?");
-    extras_button.setViatorTooltip("Opens/closes the included user manual for Duplex Comp.");
-    extras_button.getButton().setColour(juce::TextButton::ColourIds::buttonColourId,
-                                        viator_core::Colors::getViatorBGLightColor());
-    extras_button.getButton().setColour(juce::TextButton::ColourIds::buttonOnColourId,
-                                        viator_core::Colors::getViatorBGLightColor().brighter(0.5));
-    extras_button.getButton().setColour(juce::ComboBox::ColourIds::outlineColourId,
-                                        viator_core::Colors::getOutlineColor());
-    extras_button.getButton().setColour(juce::TextButton::ColourIds::textColourOffId,
-                                        viator_core::Colors::getViatorTextColor());
-    extras_button.getButton().setColour(juce::TextButton::ColourIds::textColourOnId,
-                                        viator_core::Colors::getPrimaryBGColor());
-    extras_button.getButton().setClickingTogglesState(true);
-     addAndMakeVisible(extras_button);
-    extras_button.getButton().onClick = [this]()
-     {
-         sendActionMessage("extras_button_clicked");
-     };
+    initOversamplingMenuProps();
+    initStereoMenuProps();
+    initExtrasButton();
     
-     _dropShadow = std::make_unique<juce::DropShadower>(juce::DropShadow(juce::Colours::black.withAlpha(0.5f), 10, {}));
-     _dropShadow->setOwner(this);
+     drop_shadow = std::make_unique<juce::DropShadower>(juce::DropShadow(juce::Colours::black.withAlpha(0.5f), 10, {}));
+     drop_shadow->setOwner(this);
     
 //     startTimerHz(10);
     
@@ -43,14 +25,14 @@ Header::Header(PluginProcessor& p) : audioProcessor(p), _navbar(audioProcessor)
  {
 //     if (_initialized)
 //     {
-//         _navbar.removeChangeListener(this);
+//         nav_bar.removeChangeListener(this);
 //     }
     
 //     if (_mouseListenerAdded && _initialized)
 //     {
 //         _manualButton.removeMouseListener(getParentComponent());
-//         _navbar.getLoadButton().removeMouseListener(getParentComponent());
-//         _navbar.getSaveButton().removeMouseListener(getParentComponent());
+//         nav_bar.getLoadButton().removeMouseListener(getParentComponent());
+//         nav_bar.getSaveButton().removeMouseListener(getParentComponent());
 //     }
     
 //     stopTimer();
@@ -91,17 +73,17 @@ void Header::resized()
      auto compHeight = getHeight() * 0.55;
      auto padding = getWidth() * 0.007;
 
-     _navbar.setBounds(compX, compY, compWidth, compHeight);
+     nav_bar.setBounds(compX, compY, compWidth, compHeight);
 
-    compX = _navbar.getRight() + padding;
+    compX = nav_bar.getRight() + padding;
     compWidth = getWidth() * 0.095;
-     _hqMenu.setBounds(compX, compY, compWidth, compHeight);
+     oversample_menu.setBounds(compX, compY, compWidth, compHeight);
 
-    compX = _hqMenu.getRight() + padding;
-     _stereoMenu.setBounds(compX, compY, compWidth, compHeight);
+    compX = oversample_menu.getRight() + padding;
+     stereo_mode_menu.setBounds(compX, compY, compWidth, compHeight);
 
     compWidth *= 0.5;
-    compX = _stereoMenu.getRight() + padding;
+    compX = stereo_mode_menu.getRight() + padding;
     extras_button.setBounds(compX, compY, compWidth, compHeight);
     
     // if (getParentComponent() == nullptr) return;
@@ -109,44 +91,67 @@ void Header::resized()
     // if (auto parent = dynamic_cast<ViatorProcessorEditorCore*>(getParentComponent()) && !_mouseListenerAdded)
     // {
     //     _manualButton.addMouseListener(getParentComponent(), true);
-    //     _navbar.getLoadButton().addMouseListener(getParentComponent(), true);
-    //     _navbar.getSaveButton().addMouseListener(getParentComponent(), true);
+    //     nav_bar.getLoadButton().addMouseListener(getParentComponent(), true);
+    //     nav_bar.getSaveButton().addMouseListener(getParentComponent(), true);
     //     _mouseListenerAdded = true;
     // }
 }
 
- void Header::setOversamplingMenuProps()
+void Header::initExtrasButton()
+{
+    extras_button.getButton().setButtonText("?");
+    extras_button.setViatorTooltip("Opens/closes the included user manual for Duplex Comp.");
+    extras_button.getButton().setColour(juce::TextButton::ColourIds::buttonColourId,
+                                        viator_core::Colors::getViatorBGLightColor());
+    extras_button.getButton().setColour(juce::TextButton::ColourIds::buttonOnColourId,
+                                        viator_core::Colors::getViatorBGLightColor().brighter(0.5));
+    extras_button.getButton().setColour(juce::ComboBox::ColourIds::outlineColourId,
+                                        viator_core::Colors::getOutlineColor());
+    extras_button.getButton().setColour(juce::TextButton::ColourIds::textColourOffId,
+                                        viator_core::Colors::getViatorTextColor());
+    extras_button.getButton().setColour(juce::TextButton::ColourIds::textColourOnId,
+                                        viator_core::Colors::getPrimaryBGColor());
+    extras_button.getButton().setClickingTogglesState(true);
+    addAndMakeVisible(extras_button);
+
+    extras_button.getButton().onClick = [this]()
+    {
+        sendActionMessage("extras_button_clicked");
+    };
+}
+
+ void Header::initOversamplingMenuProps()
  {
      juce::StringArray choices = {"HQ Off", "HQ X2", "HQ X4", "HQ X8"};
      for (int i = 0; i < choices.size(); ++i)
      {
-         _hqMenu.addItem(choices[i], i + 1);
+         oversample_menu.addItem(choices[i], i + 1);
      }
     
-     _hqMenu.setMenuJustification(juce::Justification::centredLeft);
+     oversample_menu.setMenuJustification(juce::Justification::centredLeft);
     
-     addAndMakeVisible(_hqMenu);
-     //_oversamplingAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(audioProcessor.getViatorTreeState(), ViatorParameters::oversamplingID, _hqMenu);
+     addAndMakeVisible(oversample_menu);
+     //_oversamplingAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(audio_processor.getViatorTreeState(), ViatorParameters::oversamplingID, oversample_menu);
  }
 
- void Header::setStereoMenuProps()
+ void Header::initStereoMenuProps()
  {
      juce::StringArray choices = {"Stereo", "Mono", "Mid", "Side"};
      for (int i = 0; i < choices.size(); ++i)
      {
-         _stereoMenu.addItem(choices[i], i + 1);
+         stereo_mode_menu.addItem(choices[i], i + 1);
      }
     
-     _stereoMenu.setMenuJustification(juce::Justification::centredLeft);
+     stereo_mode_menu.setMenuJustification(juce::Justification::centredLeft);
     
-     addAndMakeVisible(_stereoMenu);
-     //_stereoAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(audioProcessor.getViatorTreeState(), ViatorParameters::stereoModeID, _stereoMenu);
-     //_stereoMenu.setVisible(false);
+     addAndMakeVisible(stereo_mode_menu);
+     //_stereoAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(audio_processor.getViatorTreeState(), ViatorParameters::stereoModeID, stereo_mode_menu);
+     //stereo_mode_menu.setVisible(false);
  }
 
 void Header::changeListenerCallback(juce::ChangeBroadcaster *source)
 {
-    // if (source == &_navbar)
+    // if (source == &nav_bar)
     // {
     //     sendActionMessage("header");
     // }
@@ -177,7 +182,7 @@ void Header::changeListenerCallback(juce::ChangeBroadcaster *source)
 
 void Header::timerCallback()
 {
-    //_stereoMenu.setVisible(audioProcessor.getIsPluginStereo());
+    //stereo_mode_menu.setVisible(audio_processor.getIsPluginStereo());
 }
 
 }

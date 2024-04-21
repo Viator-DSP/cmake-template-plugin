@@ -1,9 +1,7 @@
-build
 cmake-build-debug
 cmake-build-release
 *viatordsp-core
 .idea/**
 .DS_Store
-externals
 
 *.pdb

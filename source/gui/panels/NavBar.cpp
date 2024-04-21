@@ -1,5 +1,4 @@
 #include "NavBar.h"
-
 #include "../../PluginProcessor.h"
 
 namespace viator_core
@@ -7,111 +6,79 @@ namespace viator_core
 
 NavBar::NavBar(PluginProcessor& p) : audioProcessor(p)
 {
-    // buttons
     initButtons();
-    setButtonProps();
-    
-    _buttons[getButtonIndex("Load")]->getButton().onClick = [this]()
-    {
-        audioProcessor.get_preset_browser().importPreset();
-    };
-    
-    _buttons[getButtonIndex("Load")]->setViatorTooltip("Loads a preset from your computer. The preset must have been made from this plugin!");
-    
-    _buttons[getButtonIndex("Save")]->getButton().onClick = [this]()
-    {
-        audioProcessor.get_preset_browser().savePreset();
-    };
-    
-    _buttons[getButtonIndex("Save")]->setViatorTooltip("Saves the current state as an xml file in your documents folder (under this plugin name) and populates it in the User menu.");
-    
-    _buttons[getButtonIndex("Settings")]->getButton().onClick = [this]()
-    {
-        sendSynchronousChangeMessage();
-    };
-    
-    // preset browser
     addAndMakeVisible(audioProcessor.get_preset_browser());
-    //audioProcessor.getPresetBrowser().addMouseListener(this, true);
-    
-    _initialized = true;
-}
-
-NavBar::~NavBar()
-{
-    if (_initialized)
-    {
-        //audioProcessor.getPresetBrowser().removeMouseListener(this);
-    }
-}
-
-void NavBar::paint (juce::Graphics& g)
-{
 }
 
 void NavBar::resized()
 {
-    auto buttonHeight = getHeight();
-    auto buttonWidth = getWidth() * 0.1;
+    const auto buttonHeight = static_cast<int>(getHeight());
+    const auto buttonWidth = static_cast<int>(getWidth() * 0.1);
     auto buttonX = 0;
-    auto buttonY = 0;
-    auto presetWidth = getWidth() * 0.75;
-    auto padding = getWidth() * 0.025;
+    constexpr auto buttonY = 0;
+    const auto presetWidth = static_cast<int>(getWidth() * 0.75);
+    const auto padding = static_cast<int>(getWidth() * 0.025);
     
-    _buttons[getButtonIndex("Load")]->setBounds(buttonX, buttonY, buttonWidth, buttonHeight);
+    preset_buttons[0]->setBounds(buttonX, buttonY, buttonWidth, buttonHeight);
     buttonX += buttonWidth + padding;
-    _buttons[getButtonIndex("Save")]->setBounds(buttonX, buttonY, buttonWidth, buttonHeight);
+    preset_buttons[1]->setBounds(buttonX, buttonY, buttonWidth, buttonHeight);
     buttonX += buttonWidth + padding;
     audioProcessor.get_preset_browser().setBounds(buttonX, buttonY, presetWidth, buttonHeight);
 }
 
-#pragma mark Buttons
-void NavBar::setButtonProps()
-{
-    _buttons[getButtonIndex("Settings")]->getButton().setClickingTogglesState(true);
-    _buttons[getButtonIndex("Settings")]->getButton().setColour(juce::TextButton::ColourIds::buttonOnColourId, viator_core::Colors::getCompActiveColor());
-    _buttons[getButtonIndex("Save")]->getButton().setClickingTogglesState(false);
-    _buttons[getButtonIndex("Load")]->getButton().setClickingTogglesState(false);
-}
-
 void NavBar::initButtons()
 {
-    for (int i = 0; i < _numButtons; i++)
+    for (int i = 0; i < num_buttons; i++)
     {
-        _buttons.add(std::make_unique<viator_core::TextButton>(_buttonNameTexts[i]));
-        _buttons[i]->setViatorButtonColorMode(viator_core::CustomTextButton::ButtonColorMode::kNormal);
-        _buttons[i]->getButton().setColour(juce::TextButton::ColourIds::buttonColourId, viator_core::Colors::getViatorBGLightColor());
-        _buttons[i]->getButton().setColour(juce::ComboBox::ColourIds::outlineColourId, viator_core::Colors::getOutlineColor());
-        _buttons[i]->getButton().setColour(juce::TextButton::ColourIds::textColourOffId, viator_core::Colors::getViatorTextColor());
-        _buttons[i]->getButton().setColour(juce::TextButton::ColourIds::textColourOnId, viator_core::Colors::getViatorTextColor());
-        addAndMakeVisible(_buttons[i]);
-    }
-}
+        // Create and add a new TextButton to the preset_buttons array
+        using btn = viator_core::TextButton;
+        preset_buttons.add(std::make_unique<btn>(preset_button_names[i]));
+        auto& button = preset_buttons[i]->getButton();
 
-int NavBar::getButtonIndex(const juce::String &name)
-{
-    int index = -1;
-    
-    for (int i = 0; i < _numButtons; i++)
+        // Set button color modes
+        using c_btn = viator_core::CustomTextButton::ButtonColorMode;
+        preset_buttons[i]->setViatorButtonColorMode(c_btn::kNormal);
+
+        // Configure button colours
+        button.setColour(juce::TextButton::ColourIds::buttonColourId,
+                         viator_core::Colors::getViatorBGLightColor());
+        button.setColour(juce::ComboBox::ColourIds::outlineColourId,
+                         viator_core::Colors::getOutlineColor());
+        button.setColour(juce::TextButton::ColourIds::textColourOffId,
+                         viator_core::Colors::getViatorTextColor());
+        button.setColour(juce::TextButton::ColourIds::textColourOnId,
+                         viator_core::Colors::getViatorTextColor());
+
+        // Make the button visible within the component
+        addAndMakeVisible(preset_buttons[i]);
+    }
+
+    auto tooltip =
+    "Loads a preset from your computer. The preset must have been made from this plugin!";
+
+    preset_buttons[0]->getButton().setClickingTogglesState(false);
+    preset_buttons[0]->setViatorTooltip(tooltip);
+    preset_buttons[0]->getButton().onClick = [this]()
     {
-        if (_buttons[i]->getButton().getName() == name)
-        {
-            index = i;
-        }
-    }
-    
-    jassert(index > -1);
-    return index;
-}
+        audioProcessor.get_preset_browser().importPreset();
+    };
 
-bool NavBar::isSettingsActive()
-{
-    return _buttons[0]->getButton().getToggleState();
+    preset_buttons[1]->getButton().setClickingTogglesState(false);
+
+    preset_buttons[1]->getButton().onClick = [this]()
+    {
+        audioProcessor.get_preset_browser().savePreset();
+    };
+
+    tooltip =
+    "Saves the current state as an xml file in your documents folder (under this plugin name) "
+    "and populates it in the User menu.";
+    preset_buttons[1]->setViatorTooltip(tooltip);
 }
 
 void NavBar::setBGColor(juce::Colour newBGColor)
 {
-    _bgColor = newBGColor;
+    background_color = newBGColor;
     repaint();
 }
 

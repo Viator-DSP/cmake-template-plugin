@@ -2,52 +2,54 @@
 #ifndef Header_h
 #define Header_h
 #include <juce_gui_basics/juce_gui_basics.h>
-#include <juce_gui_extra/juce_gui_extra.h>
-#include "BinaryData.h"
-#include "../lookandfeel/Colors.h"
 #include "NavBar.h"
 #include "../widgets/TextButton.h"
 #include "../widgets/Menu.h"
+#include "BinaryData.h"
 
 class PluginProcessor;
 
 namespace viator_core
 {
 
-class Header : public juce::Component, public juce::ActionBroadcaster, public juce::ChangeListener, public juce::Timer
+class Header :
+    public juce::Component,
+    public juce::ActionBroadcaster,
+    public juce::ChangeListener,
+    public juce::Timer
 {
 public:
-    Header(PluginProcessor&);
+    explicit Header(PluginProcessor&);
     ~Header() override;
 
     void paint (juce::Graphics&) override;
     void resized() override;
     
     // void setImage(const juce::Image logo){_logo = logo;};
-    // bool getSettingsPagePower(){return _navbar.getSettingsPagePower();};
-    // void createPresetFolder(){_navbar.createPresetFolder();}
-    // bool getDoesPresetFolderExist(){return _navbar.getDoesPresetFolderExist();};
-    // NavBar& getNavBar(){return _navbar;};
+    // bool getSettingsPagePower(){return nav_bar.getSettingsPagePower();};
+    // void createPresetFolder(){nav_bar.createPresetFolder();}
+    // bool getDoesPresetFolderExist(){return nav_bar.getDoesPresetFolderExist();};
+    // NavBar& getNavBar(){return nav_bar;};
     // viator_core::Dial& getMacroDial(){return _macroDial;};
     viator_core::TextButton& get_extras_button() {return extras_button;}
     
 private:
-    PluginProcessor& audioProcessor;
-    juce::Image _logo;
-    
-    NavBar _navbar;
+    PluginProcessor& audio_processor;
+
+    NavBar nav_bar;
     
     //viator_core::Dial _macroDial;
     // std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> _macroAttachment;
     
      viator_core::TextButton extras_button;
+    void initExtrasButton();
     
-     viator_core::Menu _hqMenu;
-     viator_core::Menu _stereoMenu;
+     viator_core::Menu oversample_menu;
+     viator_core::Menu stereo_mode_menu;
     // std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment> _oversamplingAttachment;
     // std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment> _stereoAttachment;
-     void setOversamplingMenuProps();
-     void setStereoMenuProps();
+     void initOversamplingMenuProps();
+     void initStereoMenuProps();
     
      void changeListenerCallback(juce::ChangeBroadcaster* source) override;
     
@@ -57,7 +59,7 @@ private:
     // bool _mouseListenerAdded = false;
     // bool _initialized = false;
     
-    std::unique_ptr<juce::DropShadower> _dropShadow;
+    std::unique_ptr<juce::DropShadower> drop_shadow;
     
     void timerCallback() override;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Header)

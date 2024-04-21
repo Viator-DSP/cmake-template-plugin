@@ -9,9 +9,9 @@ PluginEditor::PluginEditor(PluginProcessor &p)
     addAndMakeVisible(extras_page);
 
     juce::ignoreUnused(audio_processor);
-    setSize(1080, 540);
+    setSize(800, 452);
     setResizable(true, true);
-    getConstrainer()->setFixedAspectRatio(2.0);
+    getConstrainer()->setFixedAspectRatio(1.618);
     setResizeLimits(600, 300, 1440, 720);
 }
 
