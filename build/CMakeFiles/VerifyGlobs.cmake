@@ -8,6 +8,7 @@ set(OLD_GLOB
   "/Volumes/Land00m/GitHub/cmake-template-plugin/assets/.DS_Store"
   "/Volumes/Land00m/GitHub/cmake-template-plugin/assets/images/landon.png"
   "/Volumes/Land00m/GitHub/cmake-template-plugin/assets/images/naturalwood.jpeg"
+  "/Volumes/Land00m/GitHub/cmake-template-plugin/assets/presets/factorypreset.xml"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

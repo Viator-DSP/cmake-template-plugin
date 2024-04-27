@@ -15,7 +15,7 @@ namespace viator_core
 class PresetBrowser  : public juce::Component, public juce::ActionBroadcaster
 {
 public:
-    PresetBrowser(PluginProcessor&);
+    explicit PresetBrowser(PluginProcessor&);
     ~PresetBrowser() override;
 
     void paint (juce::Graphics&) override;
@@ -28,24 +28,10 @@ public:
     void importPreset();
     void loadPreset(const juce::String& filePath);
     void populateMenu();
-    void setPresetFolderLocation();
     void populateFactoryMenu();
     void prepareFactoryMenu();
     void createPresetFolder();
     void populateSubMenu(std::vector<juce::File>& presets, const juce::StringArray& fileNames, juce::PopupMenu& menu, int offset);
-    void recallMenuState();
-    void checkIfPresetIsDirty();
-    
-    bool getDoesPresetFolderExist()
-    {
-        auto folderPath = juce::File::getSpecialLocation(juce::File::SpecialLocationType::userApplicationDataDirectory);
-        auto path = folderPath.getFullPathName();
-        auto pluginName = _projectName;
-        path.append("/", juce::CharPointer_UTF8::getBytesRequiredFor(path.getCharPointer()));
-        path.append(pluginName, juce::CharPointer_UTF8::getBytesRequiredFor(pluginName.getCharPointer()));
-        juce::File _folder(path);
-        return _folder.isDirectory();
-    };
 
     enum class Direction
     {
@@ -86,8 +72,6 @@ private:
     juce::Array<juce::File> _xmlFiles;
     juce::StringArray _xmlFilePaths;
 
-private:
-
     // buttons
     void initButtons();
     int getButtonIndex(const juce::String& name);
@@ -99,15 +83,13 @@ private:
     void resetState();
     void makeMenuSelection();
     void saveParamsToFile(const juce::File& fileToSave);
-    void countNumberXMLElements(juce::XmlElement* element);
     void writeParamsToXML(juce::XmlElement* element);
-    void showPresetErrorMessage();
-    int getXMLByName(juce::String name);
+    int getXMLByName(const juce::String& name);
     int numXMLParameters = 0;
     std::unique_ptr<juce::FileChooser> _myChooser;
     juce::File _folderPath;
     juce::File _exportFile;
-    int previousMenuID;
+    int previousMenuID{};
     
     std::vector<juce::File> _drumPresets;
     juce::StringArray _drumFileNames;
@@ -128,8 +110,6 @@ private:
     std::vector<juce::File> _mixPresets;
     juce::StringArray _mixFileNames;
     
-private:
-
     const int _numButtons = 2;
     int numParams = 0;
 

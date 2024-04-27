@@ -6,9 +6,9 @@ CXX_DEFINES = -DJUCE_PROJECT_NAME=\"cmake-template-project\"
 
 CXX_INCLUDES = 
 
-CXX_FLAGSarm64 = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -fPIC   -w -std=gnu++17
+CXX_FLAGSarm64 = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC   -w -std=gnu++17
 
-CXX_FLAGSx86_64 = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -fPIC   -w -std=gnu++17
+CXX_FLAGSx86_64 = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC   -w -std=gnu++17
 
-CXX_FLAGS = -g -arch arm64 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk -fPIC   -w -std=gnu++17
+CXX_FLAGS = -g -arch arm64 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fPIC   -w -std=gnu++17
 

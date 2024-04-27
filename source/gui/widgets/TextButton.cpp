@@ -33,7 +33,7 @@ void TextButton::resized()
 
 void TextButton::initButtonColors()
 {
-    _button.setColour(juce::TextButton::ColourIds::buttonColourId, juce::Colour(38, 39, 40));
+    _button.setColour(juce::TextButton::ColourIds::buttonColourId, juce::Colours::transparentBlack);
     _button.setColour(juce::ComboBox::ColourIds::outlineColourId, juce::Colour(80, 80, 80));
     _button.setLookAndFeel(&_customTextButton);
     addAndMakeVisible(_button);

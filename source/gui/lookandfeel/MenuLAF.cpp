@@ -120,7 +120,17 @@ void CustomMenu::drawPopupMenuItem (juce::Graphics& g, const juce::Rectangle<int
         }
 
         r.removeFromRight (3);
-        g.drawFittedText (text, r, juce::Justification::centred, 1);
+
+        if (text == "User" || text == "Factory")
+        {
+            g.drawFittedText (text, r, juce::Justification::centred, 1);
+        }
+
+        else
+        {
+            g.drawFittedText (text, r.withX(static_cast<int>(area.getWidth() * 0.1)),
+                              juce::Justification::centredLeft, 1);
+        }
 
         if (shortcutKeyText.isNotEmpty())
         {
@@ -156,7 +166,7 @@ void CustomMenu::getIdealPopupMenuItemSize (const juce::String& text, const bool
         font.setHeight ((float) standardMenuItemHeight / 1.3f);
 
         idealHeight = standardMenuItemHeight > 0 ? standardMenuItemHeight : juce::roundToInt (font.getHeight() * 1.3f);
-        idealWidth = font.getStringWidth (text);
+        idealWidth = font.getStringWidth (text) * 2.0;
     }
 }
 

@@ -7,7 +7,7 @@ Menu::Menu()
 {
     setColour(juce::ComboBox::ColourIds::textColourId, viator_core::Colors::getViatorTextColor());
     setColour(juce::ComboBox::ColourIds::arrowColourId, viator_core::Colors::getViatorTextColor());
-    setColour(juce::ComboBox::ColourIds::backgroundColourId, viator_core::Colors::getViatorBGLightColor());
+    setColour(juce::ComboBox::ColourIds::backgroundColourId, juce::Colours::transparentBlack);
     setColour(juce::ComboBox::ColourIds::outlineColourId, viator_core::Colors::getOutlineColor());
     setColour(juce::ComboBox::ColourIds::focusedOutlineColourId, viator_core::Colors::getCompActiveColor());
     setLookAndFeel(&_customLAF);
@@ -15,7 +15,7 @@ Menu::Menu()
     getLookAndFeel().setColour(juce::ComboBox::ColourIds::buttonColourId, viator_core::Colors::getViatorTextColor());
     getLookAndFeel().setColour(juce::ComboBox::ColourIds::arrowColourId, viator_core::Colors::getViatorTextColor());
     getLookAndFeel().setColour(juce::ComboBox::ColourIds::focusedOutlineColourId, viator_core::Colors::getViatorBGCompColor());
-    getLookAndFeel().setColour(juce::PopupMenu::ColourIds::backgroundColourId, viator_core::Colors::getViatorBGLightColor());
+    getLookAndFeel().setColour(juce::PopupMenu::ColourIds::backgroundColourId, viator_core::Colors::getPrimaryBGColor().withAlpha(0.8f));
     getLookAndFeel().setColour(juce::PopupMenu::ColourIds::textColourId, viator_core::Colors::getViatorTextColor());
     getLookAndFeel().setColour(juce::PopupMenu::ColourIds::highlightedTextColourId, viator_core::Colors::getPrimaryBGColor());
     getLookAndFeel().setColour(juce::PopupMenu::ColourIds::highlightedBackgroundColourId, viator_core::Colors::getOutlineColor());

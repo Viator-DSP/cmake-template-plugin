@@ -4,10 +4,10 @@
 namespace viator_core
 {
 
-NavBar::NavBar(PluginProcessor& p) : audioProcessor(p)
+NavBar::NavBar(PluginProcessor& p) : audioProcessor(p), preset_browser(audioProcessor)
 {
     initButtons();
-    addAndMakeVisible(audioProcessor.get_preset_browser());
+    init_preset_browser();
 }
 
 void NavBar::resized()
@@ -23,7 +23,7 @@ void NavBar::resized()
     buttonX += buttonWidth + padding;
     preset_buttons[1]->setBounds(buttonX, buttonY, buttonWidth, buttonHeight);
     buttonX += buttonWidth + padding;
-    audioProcessor.get_preset_browser().setBounds(buttonX, buttonY, presetWidth, buttonHeight);
+    preset_browser.setBounds(buttonX, buttonY, presetWidth, buttonHeight);
 }
 
 void NavBar::initButtons()
@@ -40,8 +40,6 @@ void NavBar::initButtons()
         preset_buttons[i]->setViatorButtonColorMode(c_btn::kNormal);
 
         // Configure button colours
-        button.setColour(juce::TextButton::ColourIds::buttonColourId,
-                         viator_core::Colors::getViatorBGLightColor());
         button.setColour(juce::ComboBox::ColourIds::outlineColourId,
                          viator_core::Colors::getOutlineColor());
         button.setColour(juce::TextButton::ColourIds::textColourOffId,
@@ -60,20 +58,34 @@ void NavBar::initButtons()
     preset_buttons[0]->setViatorTooltip(tooltip);
     preset_buttons[0]->getButton().onClick = [this]()
     {
-        audioProcessor.get_preset_browser().importPreset();
+        preset_browser.importPreset();
     };
 
     preset_buttons[1]->getButton().setClickingTogglesState(false);
 
     preset_buttons[1]->getButton().onClick = [this]()
     {
-        audioProcessor.get_preset_browser().savePreset();
+        preset_browser.savePreset();
     };
 
     tooltip =
     "Saves the current state as an xml file in your documents folder (under this plugin name) "
     "and populates it in the User menu.";
     preset_buttons[1]->setViatorTooltip(tooltip);
+}
+
+void NavBar::init_preset_browser()
+{
+    addAndMakeVisible(preset_browser);
+    using presetType = viator_core::PresetBrowser::PresetType;
+    preset_browser.createPresetFolder();
+    preset_browser.prepareFactoryMenu();
+
+    preset_browser.addFactoryFiles(BinaryData::factorypreset_xml,
+                                   BinaryData::factorypreset_xmlSize,
+                                   "Factory Preset Test", presetType::kMix);
+
+    preset_browser.populateMenu();
 }
 
 void NavBar::setBGColor(juce::Colour newBGColor)

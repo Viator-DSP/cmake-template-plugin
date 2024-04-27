@@ -40,10 +40,10 @@ Header::Header(PluginProcessor& p) : audio_processor(p), nav_bar(audio_processor
 
  void Header::paint (juce::Graphics& g)
  {
-     g.setColour(viator_core::Colors::getPrimaryBGColor());
+     g.setColour(viator_core::Colors::getPrimaryBGColor().brighter(0.05));
      g.fillRoundedRectangle(getLocalBounds().toFloat(), 6.0f);
     
-     g.setColour(viator_core::Colors::getViatorBGLightColor().brighter(0.1f));
+     g.setColour(viator_core::Colors::getViatorTextColor().withAlpha(0.1f));
      auto width = getWidth() * 0.998;
      auto height = getHeight() * 0.98;
      g.drawRoundedRectangle(getLocalBounds().toFloat().withSizeKeepingCentre(width, height), 6.0f, getWidth() * 0.001f);
@@ -55,7 +55,7 @@ Header::Header(PluginProcessor& p) : audio_processor(p), nav_bar(audio_processor
      auto logo = juce::ImageCache::getFromMemory(BinaryData::landon_png, BinaryData::landon_pngSize);
      auto logo_width = static_cast<int>(getWidth() * 0.2);
      auto logo_x = static_cast<int>(getWidth() * 0.01);
-     auto logo_y = static_cast<int>(getWidth() * 0.003);
+     auto logo_y = static_cast<int>(getWidth() * 0.01);
      auto logo_height = static_cast<int>(logo_width * 0.218);
      g.drawImageWithin(logo,
                        logo_x,
@@ -101,8 +101,6 @@ void Header::initExtrasButton()
 {
     extras_button.getButton().setButtonText("?");
     extras_button.setViatorTooltip("Opens/closes the included user manual for Duplex Comp.");
-    extras_button.getButton().setColour(juce::TextButton::ColourIds::buttonColourId,
-                                        viator_core::Colors::getViatorBGLightColor());
     extras_button.getButton().setColour(juce::TextButton::ColourIds::buttonOnColourId,
                                         viator_core::Colors::getViatorTextColor());
     extras_button.getButton().setColour(juce::ComboBox::ColourIds::outlineColourId,

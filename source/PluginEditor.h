@@ -5,6 +5,7 @@
 #include "gui/panels/ExtrasPage.h"
 #include "gui/lookandfeel/Gradient.h"
 #include "BinaryData.h"
+#include "gui/panels/InfoPopup.h"
 
 //==============================================================================
 class PluginEditor :
@@ -31,6 +32,10 @@ private:
 
     juce::Slider test_slider;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> test_attach;
+
+    viator_core::InfoPopup info_popup;
+
+    void mouseDown(const juce::MouseEvent&	event) override;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PluginEditor)
 };

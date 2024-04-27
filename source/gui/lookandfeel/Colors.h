@@ -70,13 +70,13 @@ public:
     }
     
 private:
-    static inline juce::Colour _textColor = juce::Colour(198, 208, 245).withAlpha(0.75f);
+    static inline juce::Colour _textColor = juce::Colour(166, 172, 204);
     static inline juce::Colour _downColor = juce::Colour(206, 206, 206).withAlpha(0.1f);
     static inline juce::Colour _lightBGColor = juce::Colour(40, 38, 40);
-    static inline juce::Colour _primaryBGColor = juce::Colour(23, 21, 23);
+    static inline juce::Colour _primaryBGColor = juce::Colour(30, 35, 46);
     static inline juce::Colour _secondaryBGColor = juce::Colour(42, 42, 42);
     static inline juce::Colour _tertiaryBGColor = juce::Colour(44, 44, 44);
-    static inline juce::Colour _primaryAccentColor = juce::Colour(128, 107, 157);
+    static inline juce::Colour _primaryAccentColor = juce::Colour(242, 97, 63);
     static inline juce::Colour _compBGColor = juce::Colour(55, 54, 55);
     static inline juce::Colour _compActiveColor = juce::Colour(196, 113, 237);
     static inline juce::Colour _outlineColor = juce::Colour(198, 208, 245).withAlpha(0.25f);

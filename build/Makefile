@@ -338,6 +338,30 @@ juce_binarydata_Assets/JuceLibraryCode/BinaryData3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assets.dir/build.make CMakeFiles/Assets.dir/juce_binarydata_Assets/JuceLibraryCode/BinaryData3.cpp.s
 .PHONY : juce_binarydata_Assets/JuceLibraryCode/BinaryData3.cpp.s
 
+juce_binarydata_Assets/JuceLibraryCode/BinaryData4.o: juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp.o
+.PHONY : juce_binarydata_Assets/JuceLibraryCode/BinaryData4.o
+
+# target to build an object file
+juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assets.dir/build.make CMakeFiles/Assets.dir/juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp.o
+.PHONY : juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp.o
+
+juce_binarydata_Assets/JuceLibraryCode/BinaryData4.i: juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp.i
+.PHONY : juce_binarydata_Assets/JuceLibraryCode/BinaryData4.i
+
+# target to preprocess a source file
+juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assets.dir/build.make CMakeFiles/Assets.dir/juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp.i
+.PHONY : juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp.i
+
+juce_binarydata_Assets/JuceLibraryCode/BinaryData4.s: juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp.s
+.PHONY : juce_binarydata_Assets/JuceLibraryCode/BinaryData4.s
+
+# target to generate assembly for a file
+juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Assets.dir/build.make CMakeFiles/Assets.dir/juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp.s
+.PHONY : juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp.s
+
 libs/JUCE/modules/juce_audio_basics/juce_audio_basics.o: libs/JUCE/modules/juce_audio_basics/juce_audio_basics.mm.o
 .PHONY : libs/JUCE/modules/juce_audio_basics/juce_audio_basics.o
 
@@ -1393,6 +1417,9 @@ help:
 	@echo "... juce_binarydata_Assets/JuceLibraryCode/BinaryData3.o"
 	@echo "... juce_binarydata_Assets/JuceLibraryCode/BinaryData3.i"
 	@echo "... juce_binarydata_Assets/JuceLibraryCode/BinaryData3.s"
+	@echo "... juce_binarydata_Assets/JuceLibraryCode/BinaryData4.o"
+	@echo "... juce_binarydata_Assets/JuceLibraryCode/BinaryData4.i"
+	@echo "... juce_binarydata_Assets/JuceLibraryCode/BinaryData4.s"
 	@echo "... libs/JUCE/modules/juce_audio_basics/juce_audio_basics.o"
 	@echo "... libs/JUCE/modules/juce_audio_basics/juce_audio_basics.i"
 	@echo "... libs/JUCE/modules/juce_audio_basics/juce_audio_basics.s"

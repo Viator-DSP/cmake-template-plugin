@@ -5,10 +5,13 @@ file(REMOVE_RECURSE
   "CMakeFiles/Assets.dir/juce_binarydata_Assets/JuceLibraryCode/BinaryData2.cpp.o.d"
   "CMakeFiles/Assets.dir/juce_binarydata_Assets/JuceLibraryCode/BinaryData3.cpp.o"
   "CMakeFiles/Assets.dir/juce_binarydata_Assets/JuceLibraryCode/BinaryData3.cpp.o.d"
+  "CMakeFiles/Assets.dir/juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp.o"
+  "CMakeFiles/Assets.dir/juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp.o.d"
   "juce_binarydata_Assets/JuceLibraryCode/BinaryData.h"
   "juce_binarydata_Assets/JuceLibraryCode/BinaryData1.cpp"
   "juce_binarydata_Assets/JuceLibraryCode/BinaryData2.cpp"
   "juce_binarydata_Assets/JuceLibraryCode/BinaryData3.cpp"
+  "juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp"
   "libAssets.a"
   "libAssets.pdb"
 )

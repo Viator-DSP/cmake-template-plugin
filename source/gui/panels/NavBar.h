@@ -3,6 +3,8 @@
 #define NavBar_h
 #include "../components/PresetBrowser.h"
 #include "../widgets/TextButton.h"
+#include "gui/components/PresetBrowser.h"
+#include "BinaryData.h"
 
 class PluginProcessor;
 namespace viator_core
@@ -17,10 +19,9 @@ public:
     void resized() override;
     
     void setBGColor(juce::Colour newBGColor);
-    
-    //void createPresetFolder(){audio_processor.getPresetBrowser().createPresetFolder();};
-    //bool getDoesPresetFolderExist(){return audio_processor.getPresetBrowser().getDoesPresetFolderExist();};
 
+    viator_core::PresetBrowser& get_preset_browser() {return preset_browser;}
+    
 private:
     PluginProcessor& audioProcessor;
     
@@ -39,6 +40,9 @@ private:
     const float shadow_alpha = 0.25f;
     juce::Colour background_color = juce::Colour::fromRGB(60, 60, 73).brighter(0.1);
     const int num_buttons = 3;
+
+    viator_core::PresetBrowser preset_browser;
+    void init_preset_browser();
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (NavBar)
 };

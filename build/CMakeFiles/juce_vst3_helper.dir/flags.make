@@ -6,9 +6,9 @@ CXX_DEFINES = -DDEBUG=1 -DJUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1 -DJUCE_PROJECT_
 
 CXX_INCLUDES = -I/Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_audio_processors/format_types/VST3_SDK -I/Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules
 
-CXX_FLAGSarm64 = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk   -w -fobjc-arc -g -O0 -std=gnu++17
+CXX_FLAGSarm64 = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk   -w -fobjc-arc -g -O0 -std=gnu++17
 
-CXX_FLAGSx86_64 = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk   -w -fobjc-arc -g -O0 -std=gnu++17
+CXX_FLAGSx86_64 = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk   -w -fobjc-arc -g -O0 -std=gnu++17
 
-CXX_FLAGS = -g -arch arm64 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk   -w -fobjc-arc -g -O0 -std=gnu++17
+CXX_FLAGS = -g -arch arm64 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk   -w -fobjc-arc -g -O0 -std=gnu++17
 

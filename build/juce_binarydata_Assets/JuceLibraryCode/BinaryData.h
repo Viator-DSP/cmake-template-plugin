@@ -17,8 +17,11 @@ namespace BinaryData
     extern const char*   naturalwood_jpeg;
     const int            naturalwood_jpegSize = 2153501;
 
+    extern const char*   factorypreset_xml;
+    const int            factorypreset_xmlSize = 126;
+
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 3;
+    const int namedResourceListSize = 4;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

@@ -32,6 +32,7 @@ public:
     // NavBar& getNavBar(){return nav_bar;};
     // viator_core::Dial& getMacroDial(){return _macroDial;};
     viator_core::TextButton& get_extras_button() {return extras_button;}
+    NavBar& get_navbar() {return nav_bar;}
     
 private:
     PluginProcessor& audio_processor;
