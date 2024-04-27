@@ -6,6 +6,7 @@ PluginEditor::PluginEditor(PluginProcessor &p)
     addAndMakeVisible(header_comp);
     header_comp.addActionListener(this);
 
+    extras_page.setAlwaysOnTop(true);
     addAndMakeVisible(extras_page);
 
     test_slider.setSliderStyle(juce::Slider::RotaryVerticalDrag);
@@ -18,11 +19,10 @@ PluginEditor::PluginEditor(PluginProcessor &p)
     header_comp.get_navbar().get_preset_browser().addActionListener(this);
 
     juce::ignoreUnused(audio_processor);
-    auto mult = 1.5;
-    setSize(800 * mult, 452 * mult);
+    setSize(1200, 678);
     setResizable(true, true);
     getConstrainer()->setFixedAspectRatio(1.618);
-    setResizeLimits(600, 300, 1440, 720);
+    setResizeLimits(600, 339, 1200, 678);
 }
 
 PluginEditor::~PluginEditor()
@@ -44,7 +44,7 @@ void PluginEditor::resized()
 {
     // header
     auto compX = static_cast<int>(getWidth() * 0.01);
-    auto compY = static_cast<int>(getHeight() * 0.02);
+    auto compY = 0; //static_cast<int>(getHeight() * 0.02);
     auto compWidth = static_cast<int>(getWidth() * 0.98);
     auto compHeight = static_cast<int>(getHeight() * 0.1);
     header_comp.setBounds(compX, compY, compWidth, compHeight);

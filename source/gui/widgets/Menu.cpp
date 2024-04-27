@@ -15,10 +15,10 @@ Menu::Menu()
     getLookAndFeel().setColour(juce::ComboBox::ColourIds::buttonColourId, viator_core::Colors::getViatorTextColor());
     getLookAndFeel().setColour(juce::ComboBox::ColourIds::arrowColourId, viator_core::Colors::getViatorTextColor());
     getLookAndFeel().setColour(juce::ComboBox::ColourIds::focusedOutlineColourId, viator_core::Colors::getViatorBGCompColor());
-    getLookAndFeel().setColour(juce::PopupMenu::ColourIds::backgroundColourId, viator_core::Colors::getPrimaryBGColor().withAlpha(0.8f));
+    getLookAndFeel().setColour(juce::PopupMenu::ColourIds::backgroundColourId, viator_core::Colors::getViatorBGLightColor().withAlpha(0.8f));
     getLookAndFeel().setColour(juce::PopupMenu::ColourIds::textColourId, viator_core::Colors::getViatorTextColor());
-    getLookAndFeel().setColour(juce::PopupMenu::ColourIds::highlightedTextColourId, viator_core::Colors::getPrimaryBGColor());
-    getLookAndFeel().setColour(juce::PopupMenu::ColourIds::highlightedBackgroundColourId, viator_core::Colors::getOutlineColor());
+    getLookAndFeel().setColour(juce::PopupMenu::ColourIds::highlightedTextColourId, viator_core::Colors::getViatorTextColor());
+    getLookAndFeel().setColour(juce::PopupMenu::ColourIds::highlightedBackgroundColourId, viator_core::Colors::getOutlineColor().withAlpha(0.25f));
 }
 
 Menu::~Menu()
@@ -39,25 +39,20 @@ void Menu::setTransparent()
     getLookAndFeel().setColour(juce::ComboBox::ColourIds::focusedOutlineColourId, viator_core::Colors::getViatorBGCompColor());
     getLookAndFeel().setColour(juce::PopupMenu::ColourIds::backgroundColourId, viator_core::Colors::getPrimaryBGColor().brighter(0.05));
     getLookAndFeel().setColour(juce::PopupMenu::ColourIds::textColourId, viator_core::Colors::getViatorTextColor());
-    getLookAndFeel().setColour(juce::PopupMenu::ColourIds::highlightedTextColourId, juce::Colours::whitesmoke);
+    getLookAndFeel().setColour(juce::PopupMenu::ColourIds::highlightedTextColourId, juce::Colours::black);
     getLookAndFeel().setColour(juce::PopupMenu::ColourIds::highlightedBackgroundColourId, viator_core::Colors::getCompActiveColor());
     repaint();
 }
 
 void Menu::enableShadow(bool enable)
 {
-    if (enable)
-    {
-        _dropShadow = std::make_unique<juce::DropShadower>(juce::DropShadow(juce::Colours::black.withAlpha(1.0f), 5, {}));
-        _dropShadow->setOwner(this);
-    }
-    
-    else
-    {
-        _dropShadow.reset();
-        _dropShadow->setOwner(nullptr);
-    }
-    
+    auto state = static_cast<float>(enable);
+    auto shadow_color = juce::Colours::black.withAlpha(state);
+    auto drop_shadow = juce::DropShadow(shadow_color, 5, {});
+
+    _dropShadow = std::make_unique<juce::DropShadower>(drop_shadow);
+    _dropShadow->setOwner(this);
+
     repaint();
 }
 

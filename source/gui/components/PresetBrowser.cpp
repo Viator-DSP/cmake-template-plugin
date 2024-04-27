@@ -99,7 +99,7 @@ namespace viator_core {
         _presetMenu.setComponentID("Preset");
         _presetMenu.setTextWhenNothingSelected("Presets");
         _presetMenu.addMouseListener(this, false);
-        _presetMenu.enableShadow(true);
+        _presetMenu.enableShadow(false);
 
         _presetMenu.onChange = [this]() {
             auto notNegative = _presetMenu.getSelectedId() >= 1;

@@ -5,6 +5,11 @@ namespace viator_core
 
 ExtrasPage::ExtrasPage()
 {
+    auto shadow_color = juce::Colours::black.withAlpha(0.15f);
+    auto shadow = juce::DropShadow(shadow_color, 25, {});
+
+    drop_shadow = std::make_unique<juce::DropShadower>(shadow);
+    drop_shadow->setOwner(this);
 }
 
 ExtrasPage::~ExtrasPage()
@@ -13,11 +18,8 @@ ExtrasPage::~ExtrasPage()
 
 void ExtrasPage::paint (juce::Graphics& g)
 {
-    g.setColour(juce::Colours::black.withAlpha(0.7f));
-    g.fillRoundedRectangle(0, 0, getWidth(), getHeight(), 6.0f);
-
-    g.setColour(juce::Colours::whitesmoke.withAlpha(0.2f));
-    g.drawRoundedRectangle(getLocalBounds().toFloat(), 6.0f, 2.0f);
+    g.setColour(viator_core::Colors::getViatorBGLightColor().withAlpha(0.8f));
+    g.fillRect(0, 0, getWidth(), getHeight());
 }
 
 void ExtrasPage::resized()

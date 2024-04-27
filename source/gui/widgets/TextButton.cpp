@@ -38,8 +38,8 @@ void TextButton::initButtonColors()
     _button.setLookAndFeel(&_customTextButton);
     addAndMakeVisible(_button);
 
-    _dropShadow = std::make_unique<juce::DropShadower>(juce::DropShadow(juce::Colours::black.withAlpha(1.0f), 5, {}));
-    _dropShadow->setOwner(this);
+    //_dropShadow = std::make_unique<juce::DropShadower>(juce::DropShadow(juce::Colours::black.withAlpha(0.25f), 5, {}));
+    //_dropShadow->setOwner(this);
 }
 
 void TextButton::setViatorButtonColorMode(viator_core::CustomTextButton::ButtonColorMode btnColorMode)

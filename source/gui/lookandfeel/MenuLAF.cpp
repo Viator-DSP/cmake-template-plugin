@@ -36,13 +36,20 @@ namespace viator_core
         label.setInterceptsMouseClicks(false, false);
         label.setBounds (box.getLocalBounds());
         label.setJustificationType(_justification);
-        label.setFont (juce::Font("Helvetica", box.getHeight() * 0.5, juce::Font::FontStyleFlags::bold));
+
+        float font_size = static_cast<float>(box.getHeight()) * 0.4f;
+        using font_style = juce::Font::FontStyleFlags;
+        auto font = juce::Font {"Trebuchet MS", font_size, font_style::plain};
+
+        label.setFont (font);
     }
 
 void CustomMenu::drawComboBoxTextWhenNothingSelected (juce::Graphics& g, juce::ComboBox& box, juce::Label& label)
 {
     g.setColour(box.findColour(juce::ComboBox::textColourId));
-    auto font = label.getLookAndFeel().getLabelFont (label);
+    float font_size = static_cast<float>(label.getHeight()) * 0.4f;
+    using font_style = juce::Font::FontStyleFlags;
+    auto font = juce::Font {"Trebuchet MS", font_size, font_style::plain};
 
     g.setFont (font);
 
@@ -95,12 +102,9 @@ void CustomMenu::drawPopupMenuItem (juce::Graphics& g, const juce::Rectangle<int
         if (! isActive)
             g.setOpacity (0.3f);
 
-        juce::Font font (area.getHeight() * 0.5f);
-
-        auto maxFontHeight = (float) area.getHeight() * 0.5f;
-
-        if (font.getHeight() > maxFontHeight)
-            font.setHeight (maxFontHeight);
+        float font_size = static_cast<float>(area.getHeight()) * 0.4f;
+        using font_style = juce::Font::FontStyleFlags;
+        auto font = juce::Font {"Trebuchet MS", font_size, font_style::plain};
 
         g.setFont (font);
 

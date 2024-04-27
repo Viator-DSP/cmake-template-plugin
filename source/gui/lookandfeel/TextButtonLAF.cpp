@@ -35,8 +35,10 @@ void CustomTextButton::drawButtonBackground (juce::Graphics& g,
 
 juce::Font CustomTextButton::getTextButtonFont (juce::TextButton& button, int buttonHeight)
 {
-    bool isInfo = button.getButtonText() == "?";
-    return juce::Font ("Helvetica", isInfo ? static_cast<float>(buttonHeight) * 0.55 : static_cast<float>(buttonHeight) * 0.4f, juce::Font::FontStyleFlags::bold);
+    bool need_larger_text = button.getButtonText() == "?" || button.getButtonText() == "<" || button.getButtonText() == ">";
+    float font_size = need_larger_text ? static_cast<float>(buttonHeight) * 0.6f : static_cast<float>(buttonHeight) * 0.4f;
+    using font_style = juce::Font::FontStyleFlags;
+    return juce::Font {"Trebuchet MS", font_size, font_style::plain};
 }
 
 void CustomTextButton::drawButtonText (juce::Graphics& g, juce::TextButton& button,

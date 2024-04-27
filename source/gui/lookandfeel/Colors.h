@@ -72,7 +72,7 @@ public:
 private:
     static inline juce::Colour _textColor = juce::Colour(166, 172, 204);
     static inline juce::Colour _downColor = juce::Colour(206, 206, 206).withAlpha(0.1f);
-    static inline juce::Colour _lightBGColor = juce::Colour(40, 38, 40);
+    static inline juce::Colour _lightBGColor = juce::Colour(50, 58, 77);
     static inline juce::Colour _primaryBGColor = juce::Colour(30, 35, 46);
     static inline juce::Colour _secondaryBGColor = juce::Colour(42, 42, 42);
     static inline juce::Colour _tertiaryBGColor = juce::Colour(44, 44, 44);
