@@ -1,5 +1,7 @@
 #include "PluginEditor.h"
 
+#include "gui/utils/window.h"
+
 PluginEditor::PluginEditor(PluginProcessor &p)
     : AudioProcessorEditor(&p), audio_processor(p), header_comp(audio_processor)
 {
@@ -19,10 +21,9 @@ PluginEditor::PluginEditor(PluginProcessor &p)
     header_comp.get_navbar().get_preset_browser().addActionListener(this);
 
     juce::ignoreUnused(audio_processor);
-    setSize(1200, 678);
-    setResizable(true, true);
-    getConstrainer()->setFixedAspectRatio(1.618);
-    setResizeLimits(600, 339, 1200, 678);
+    viator_core::PluginWindow::setPluginWindowSize (
+        *this,
+        1.6);
 }
 
 PluginEditor::~PluginEditor()

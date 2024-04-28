@@ -57,7 +57,8 @@ add_library(SharedCode INTERFACE
         source/gui/components/PresetBrowser.h
         source/gui/panels/NavBar.h
         source/gui/panels/ExtrasPage.h
-        source/gui/panels/InfoPopup.h)
+        source/gui/panels/InfoPopup.h
+        source/gui/utils/window.h)
 
 # Set compile features for SharedCode
 target_compile_features(SharedCode INTERFACE cxx_std_20)
