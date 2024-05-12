@@ -221,12 +221,12 @@ public:
     /** Calculates the approximated value for the given input value without range checking.
 
         Use this if you can guarantee that the input value is within the range specified
-        in the constructor or initialise(), otherwise use processSample().
+        in the constructor or initialise(), otherwise use process_sample().
 
         @param value The approximation is calculated for this input value.
         @return      The approximated value for the provided input value.
 
-        @see processSample, operator(), operator[]
+        @see process_sample, operator(), operator[]
     */
     FloatType processSampleUnchecked (FloatType value) const noexcept
     {
@@ -260,7 +260,7 @@ public:
     /** @see processSampleUnchecked */
     FloatType operator[] (FloatType index) const noexcept       { return processSampleUnchecked (index); }
 
-    /** @see processSample */
+    /** @see process_sample */
     FloatType operator() (FloatType index) const noexcept       { return processSample (index); }
 
     //==============================================================================

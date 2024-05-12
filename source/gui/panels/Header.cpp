@@ -96,10 +96,13 @@ void Header::initExtrasButton()
          oversample_menu.addItem(choices[i], i + 1);
      }
     
-     oversample_menu.setMenuJustification(juce::Justification::centredLeft);
+     oversample_menu.setMenuJustification(juce::Justification::centred);
     
      addAndMakeVisible(oversample_menu);
-     //_oversamplingAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(audio_processor.getViatorTreeState(), ViatorParameters::oversamplingID, oversample_menu);
+     oversample_attach = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(
+             audio_processor.get_tree_state(),
+             viator_core::Parameters::hqID,
+             oversample_menu);
  }
 
  void Header::initStereoMenuProps()
@@ -110,11 +113,13 @@ void Header::initExtrasButton()
          stereo_mode_menu.addItem(choices[i], i + 1);
      }
     
-     stereo_mode_menu.setMenuJustification(juce::Justification::centredLeft);
+     stereo_mode_menu.setMenuJustification(juce::Justification::centred);
     
      addAndMakeVisible(stereo_mode_menu);
-     //_stereoAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(audio_processor.getViatorTreeState(), ViatorParameters::stereoModeID, stereo_mode_menu);
-     //stereo_mode_menu.setVisible(false);
+     stereo_attach = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(
+             audio_processor.get_tree_state(),
+             viator_core::Parameters::stereoID,
+             stereo_mode_menu);
  }
 
 void Header::init_shadow()

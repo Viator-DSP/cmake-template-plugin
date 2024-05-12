@@ -21,7 +21,6 @@ namespace viator_core
                 kFloat
             };
 
-        public:
             juce::String paramID;
             juce::String paramName;
             float min;
@@ -34,10 +33,17 @@ namespace viator_core
 
         struct ButtonParameterData
         {
-        public:
             juce::String paramID;
             juce::String paramName;
             bool initial;
+        };
+
+        struct MenuParameterData
+        {
+            juce::String paramID;
+            juce::String paramName;
+            juce::StringArray choices;
+            int initial;
         };
 
         class Params
@@ -46,18 +52,21 @@ namespace viator_core
             Params();
 
             // Get a ref to the param data
-            std::vector<viator_core::ParameterData::SliderParameterData> &getSliderParams() { return _sliderParams; };
-            std::vector<viator_core::ParameterData::ButtonParameterData> &getButtonParams() { return _buttonParams; };
+            std::vector<viator_core::ParameterData::SliderParameterData> &get_slider_params() { return slider_params; }
+            std::vector<viator_core::ParameterData::ButtonParameterData> &get_button_params() { return button_params; }
+            std::vector<viator_core::ParameterData::MenuParameterData> &get_menu_params() { return menu_params; }
 
         private:
             // Adds params to the vector
-            void initSliderParams();
-            void initButtonParams();
+            void init_slider_params();
+            void init_button_params();
+            void init_menu_params();
 
         private:
             // Vector holding param data
-            std::vector<viator_core::ParameterData::SliderParameterData> _sliderParams;
-            std::vector<viator_core::ParameterData::ButtonParameterData> _buttonParams;
+            std::vector<viator_core::ParameterData::SliderParameterData> slider_params;
+            std::vector<viator_core::ParameterData::ButtonParameterData> button_params;
+            std::vector<viator_core::ParameterData::MenuParameterData> menu_params;
         };
     }
 }

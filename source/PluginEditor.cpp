@@ -13,6 +13,7 @@ PluginEditor::PluginEditor(PluginProcessor &p)
 
     test_slider.setSliderStyle(juce::Slider::RotaryVerticalDrag);
     test_slider.setTextBoxStyle(juce::Slider::TextBoxBelow, false, 64, 32);
+    test_slider.setColour(juce::Slider::ColourIds::rotarySliderFillColourId, juce::Colours::black);
     test_attach = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audio_processor.get_tree_state(), "outputID", test_slider);
     addAndMakeVisible(test_slider);
 
@@ -37,7 +38,7 @@ void PluginEditor::paint(juce::Graphics &g)
     auto rect = getLocalBounds();
     auto bgColor = viator_core::Colors::getPrimaryBGColor();
     auto radType = viator_core::Gradient::RectShape::kRounded;
-    auto contrast = 0.05f;
+    auto contrast = 0.1f;
     viator_core::Gradient::addRadialGradient(g, bgColor, rect, radType, contrast);
 }
 
@@ -45,7 +46,7 @@ void PluginEditor::resized()
 {
     // header
     auto compX = static_cast<int>(getWidth() * 0.01);
-    auto compY = 0; //static_cast<int>(getHeight() * 0.02);
+    auto compY = 0;
     auto compWidth = static_cast<int>(getWidth() * 0.98);
     auto compHeight = static_cast<int>(getHeight() * 0.1);
     header_comp.setBounds(compX, compY, compWidth, compHeight);

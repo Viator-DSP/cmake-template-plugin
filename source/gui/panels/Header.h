@@ -5,6 +5,7 @@
 #include "NavBar.h"
 #include "../widgets/TextButton.h"
 #include "../widgets/Menu.h"
+#include "../../Global/Parameters.h"
 #include "BinaryData.h"
 
 class PluginProcessor;
@@ -36,6 +37,8 @@ private:
     
      viator_core::Menu oversample_menu;
      viator_core::Menu stereo_mode_menu;
+     std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment> oversample_attach;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment> stereo_attach;
      void initOversamplingMenuProps();
      void initStereoMenuProps();
     

@@ -10,7 +10,7 @@ namespace viator_core
     void CustomMenu::drawComboBox (juce::Graphics& g, int width, int height, bool,
                                        int, int, int, int, juce::ComboBox& box)
     {
-        auto cornerSize = 0.0f;
+        auto cornerSize = 12.0f;
         juce::Rectangle<int> boxBounds (0, 0, width, height);
 
         auto bgColor = box.findColour (juce::ComboBox::backgroundColourId);

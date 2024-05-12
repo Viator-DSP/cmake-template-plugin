@@ -407,7 +407,7 @@ namespace viator_core {
         juce::XmlElement xml(appName);
 
         // get ref to params
-        auto sliderParams = audioProcessor.getParameterMap().getSliderParams();
+        auto sliderParams = audioProcessor.getParameterMap().get_slider_params();
 
         // Add parameters to the XML document
         for (auto &param: sliderParams) {
@@ -419,7 +419,7 @@ namespace viator_core {
         }
 
         // get ref to params
-        auto btnParams = audioProcessor.getParameterMap().getButtonParams();
+        auto btnParams = audioProcessor.getParameterMap().get_button_params();
 
         // Add parameters to the XML document
         for (auto &param: btnParams) {

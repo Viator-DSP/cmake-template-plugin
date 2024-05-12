@@ -3,6 +3,7 @@
 #include "Global/Parameters.h"
 #include <juce_audio_processors/juce_audio_processors.h>
 #include <juce_dsp/juce_dsp.h>
+#include "dsp/filter.h"
 
 class PluginProcessor : public juce::AudioProcessor, public juce::AudioProcessorValueTreeState::Listener
 
@@ -55,6 +56,7 @@ private:
     void updateParameters();
 
     juce::dsp::ProcessSpec process_spec;
+    viator::SVFilter<float> test_filter;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(PluginProcessor)
 };

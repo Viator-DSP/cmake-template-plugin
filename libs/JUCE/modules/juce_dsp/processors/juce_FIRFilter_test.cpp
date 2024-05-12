@@ -132,7 +132,7 @@ class FIRFilterTest final : public UnitTest
         static void run (FIR::Filter<FloatType>& filter, FloatType* src, FloatType* dst, size_t n)
         {
             for (size_t i = 0; i < n; ++i)
-                dst[i] = filter.processSample (src[i]);
+                dst[i] = filter.process_sample(src[i]);
         }
     };
 

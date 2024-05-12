@@ -13,27 +13,37 @@ PluginProcessor::PluginProcessor()
                          ),
       _treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
 {
-    for (int i = 0; i < _parameterMap.getSliderParams().size(); i++)
+    for (int i = 0; i < _parameterMap.get_slider_params().size(); i++)
     {
-        _treeState.addParameterListener(_parameterMap.getSliderParams()[i].paramID, this);
+        _treeState.addParameterListener(_parameterMap.get_slider_params()[i].paramID, this);
     }
 
-    for (int i = 0; i < _parameterMap.getButtonParams().size(); i++)
+    for (int i = 0; i < _parameterMap.get_button_params().size(); i++)
     {
-        _treeState.addParameterListener(_parameterMap.getButtonParams()[i].paramID, this);
+        _treeState.addParameterListener(_parameterMap.get_button_params()[i].paramID, this);
+    }
+
+    for (int i = 0; i < _parameterMap.get_menu_params().size(); i++)
+    {
+        _treeState.addParameterListener(_parameterMap.get_menu_params()[i].paramID, this);
     }
 }
 
 PluginProcessor::~PluginProcessor()
 {
-    for (int i = 0; i < _parameterMap.getSliderParams().size(); i++)
+    for (int i = 0; i < _parameterMap.get_slider_params().size(); i++)
     {
-        _treeState.removeParameterListener(_parameterMap.getSliderParams()[i].paramID, this);
+        _treeState.removeParameterListener(_parameterMap.get_slider_params()[i].paramID, this);
     }
 
-    for (int i = 0; i < _parameterMap.getButtonParams().size(); i++)
+    for (int i = 0; i < _parameterMap.get_button_params().size(); i++)
     {
-        _treeState.removeParameterListener(_parameterMap.getButtonParams()[i].paramID, this);
+        _treeState.removeParameterListener(_parameterMap.get_button_params()[i].paramID, this);
+    }
+
+    for (int i = 0; i < _parameterMap.get_menu_params().size(); i++)
+    {
+        _treeState.removeParameterListener(_parameterMap.get_menu_params()[i].paramID, this);
     }
 }
 
@@ -107,9 +117,9 @@ juce::AudioProcessorValueTreeState::ParameterLayout PluginProcessor::createParam
     std::vector<std::unique_ptr<juce::RangedAudioParameter>> params;
 
     // sliders
-    for (int i = 0; i < _parameterMap.getSliderParams().size(); i++)
+    for (int i = 0; i < _parameterMap.get_slider_params().size(); i++)
     {
-        auto param = _parameterMap.getSliderParams()[i];
+        auto param = _parameterMap.get_slider_params()[i];
 
         if (param.isInt == viator_core::ParameterData::SliderParameterData::NumericType::kInt || param.isSkew == viator_core::ParameterData::SliderParameterData::SkewType::kSkew)
         {
@@ -130,10 +140,21 @@ juce::AudioProcessorValueTreeState::ParameterLayout PluginProcessor::createParam
     }
 
     // buttons
-    for (int i = 0; i < _parameterMap.getButtonParams().size(); i++)
+    for (int i = 0; i < _parameterMap.get_button_params().size(); i++)
     {
-        auto param = _parameterMap.getButtonParams()[i];
-        params.push_back(std::make_unique<juce::AudioParameterBool>(juce::ParameterID{param.paramID, 1}, param.paramName, _parameterMap.getButtonParams()[i].initial));
+        auto param = _parameterMap.get_button_params()[i];
+        params.push_back(std::make_unique<juce::AudioParameterBool>(juce::ParameterID{param.paramID, 1}, param.paramName, _parameterMap.get_button_params()[i].initial));
+    }
+
+    // menus
+    for (int i = 0; i < _parameterMap.get_menu_params().size(); i++)
+    {
+        auto param = _parameterMap.get_menu_params()[i];
+        params.push_back(std::make_unique<juce::AudioParameterChoice>(
+                        juce::ParameterID{param.paramID, 1},
+                        param.paramName,
+                        _parameterMap.get_menu_params()[i].choices,
+                        _parameterMap.get_menu_params()[i].initial));
     }
 
     return {params.begin(), params.end()};
@@ -145,6 +166,27 @@ void PluginProcessor::parameterChanged(const juce::String &parameterID, float ne
 
 void PluginProcessor::updateParameters()
 {
+    auto cutoff = _treeState.getRawParameterValue(viator_core::Parameters::cutoffID)->load();
+    auto q = _treeState.getRawParameterValue(viator_core::Parameters::bwID)->load();
+    auto gain = _treeState.getRawParameterValue(viator_core::Parameters::gainID)->load();
+    test_filter.set_parameters(cutoff, q, gain);
+
+    auto type = _treeState.getRawParameterValue(viator_core::Parameters::typeID)->load();
+
+    using param = viator::SVFilter<float>::ParameterId;
+    switch (static_cast<int>(type))
+    {
+        case 0: test_filter.setParameter(param::kType,
+                                         viator::SVFilter<float>::FilterType::kLowPass); break;
+        case 1: test_filter.setParameter(param::kType,
+                                         viator::SVFilter<float>::FilterType::kHighPass); break;
+        case 2: test_filter.setParameter(param::kType,
+                                         viator::SVFilter<float>::FilterType::kBandShelf); break;
+        case 3: test_filter.setParameter(param::kType,
+                                         viator::SVFilter<float>::FilterType::kLowShelf); break;
+        case 4: test_filter.setParameter(param::kType,
+                                         viator::SVFilter<float>::FilterType::kHighShelf); break;
+    }
 }
 
 //==============================================================================
@@ -155,6 +197,10 @@ void PluginProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
     process_spec.numChannels = static_cast<unsigned int>(getTotalNumOutputChannels());
     process_spec.maximumBlockSize = static_cast<unsigned int>(samplesPerBlock);
 
+    test_filter.prepare(static_cast<float>(sampleRate),
+                        static_cast<int>(process_spec.numChannels));
+    using param = viator::SVFilter<float>::ParameterId;
+    test_filter.setParameter(param::kQType, viator::SVFilter<float>::QType::kParametric);
 }
 
 void PluginProcessor::releaseResources()
@@ -190,6 +236,15 @@ void PluginProcessor::processBlock(juce::AudioBuffer<float> &buffer,
     juce::ignoreUnused(midiMessages);
     updateParameters();
 
+    float* pointers[buffer.getNumSamples()];
+    for (int i = 0; i < buffer.getNumChannels(); ++i)
+    {
+        pointers[i] = buffer.getWritePointer(i);
+    }
+
+    test_filter.process_buffer(pointers,
+                               buffer.getNumChannels(),
+                               buffer.getNumSamples());
 }
 
 //==============================================================================
@@ -200,24 +255,27 @@ bool PluginProcessor::hasEditor() const
 
 juce::AudioProcessorEditor *PluginProcessor::createEditor()
 { // Use generic gui for editor for now
-    return new PluginEditor(*this);
-    //return new juce::GenericAudioProcessorEditor(*this);
+    //return new PluginEditor(*this);
+    return new juce::GenericAudioProcessorEditor(*this);
 }
 
 //==============================================================================
 void PluginProcessor::getStateInformation(juce::MemoryBlock &destData)
 {
-    // You should use this method to store your parameters in the memory block.
-    // You could do that either as raw data, or use the XML or ValueTree classes
-    // as intermediaries to make it easy to save and load complex data.
-    juce::ignoreUnused(destData);
+    _treeState.state.appendChild(getVariableTree(), nullptr);
+    juce::MemoryOutputStream stream(destData, false);
+    _treeState.state.writeToStream (stream);
 }
 
 void PluginProcessor::setStateInformation(const void *data, int sizeInBytes)
 {
-    // You should use this method to restore your parameters from this memory block,
-    // whose contents will have been created by the getStateInformation() call.
-    juce::ignoreUnused(data, sizeInBytes);
+    auto tree = juce::ValueTree::readFromData (data, size_t(sizeInBytes));
+    variableTree = tree.getChildWithName("Variables");
+
+    if (tree.isValid())
+    {
+        _treeState.state = tree;
+    }
 }
 
 //==============================================================================
