@@ -59,5 +59,10 @@ private:
     viator::SVFilter<float> test_filter;
     std::vector<float*> data;
 
+    float mu = 100.0f;
+    float k = 1.4f;
+    float ex = 1.5f;
+    static constexpr float pi_divisor = 2.0f / juce::MathConstants<float>::pi;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(PluginProcessor)
 };

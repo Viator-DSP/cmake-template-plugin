@@ -241,6 +241,25 @@ void PluginProcessor::processBlock(juce::AudioBuffer<float> &buffer,
     juce::ignoreUnused(midiMessages);
     updateParameters();
 
+//    for (int channel = 0; channel < buffer.getNumChannels(); ++channel)
+//    {
+//        auto* data = buffer.getWritePointer(channel);
+//
+//        for (int sample = 0; sample < buffer.getNumSamples(); ++sample)
+//        {
+//            float input = data[sample] * drive;
+//
+//            // 12ax7
+//            float xn_e = 1.0 + std::exp(mu * (k * input - 1.0));
+//            float tube = (input / xn_e) + (ex * std::log(1.0 + std::exp(input)));
+//
+//            // soft clip
+//            //float clipped = pi_divisor * std::atan(tube * scaled_drive);
+//
+//            data[sample] = tube;
+//        }
+//    }
+
 }
 
 //==============================================================================
