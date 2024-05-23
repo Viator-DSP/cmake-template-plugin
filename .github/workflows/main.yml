@@ -27,14 +27,15 @@ jobs:
         with:
           vs-version: "latest"
 
-      - name: Clear CMake cache
+      - name: Clear CMake build directories
         run: |
-          if (Test-Path Build/CMakeCache.txt) {
-            Remove-Item Build/CMakeCache.txt
+          if (Test-Path Build) {
+            Remove-Item Build -Recurse -Force
           }
 
       - name: Configure CMake
-        run: cmake -B Build -D CMAKE_BUILD_TYPE=Release
+        run: |
+          cmake -B Build -D CMAKE_BUILD_TYPE=Release -D CMAKE_GENERATOR_PLATFORM=x64
 
       - name: Build
         run: cmake --build Build --config Release
