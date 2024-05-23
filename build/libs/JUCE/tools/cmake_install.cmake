@@ -39,18 +39,18 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Volumes/Land00m/GitHub/cmake-template-plugin/build/libs/JUCE/tools/modules/cmake_install.cmake")
+  include("/Volumes/Land00m/GitHub/cmake-template-plugin/Build/libs/JUCE/tools/modules/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Volumes/Land00m/GitHub/cmake-template-plugin/build/libs/JUCE/tools/extras/Build/cmake_install.cmake")
+  include("/Volumes/Land00m/GitHub/cmake-template-plugin/Build/libs/JUCE/tools/extras/Build/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/JUCE-7.0.11" TYPE FILE FILES
-    "/Volumes/Land00m/GitHub/cmake-template-plugin/build/libs/JUCE/tools/JUCEConfigVersion.cmake"
-    "/Volumes/Land00m/GitHub/cmake-template-plugin/build/libs/JUCE/tools/JUCEConfig.cmake"
+    "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/libs/JUCE/tools/JUCEConfigVersion.cmake"
+    "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/libs/JUCE/tools/JUCEConfig.cmake"
     "/Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/extras/Build/CMake/JUCECheckAtomic.cmake"
     "/Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/extras/Build/CMake/JUCEHelperTargets.cmake"
     "/Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake"
@@ -78,5 +78,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/libs/JUCE/tools/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/libs/JUCE/tools/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/Volumes/Land00m/GitHub/cmake-template-plugin")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/Volumes/Land00m/GitHub/cmake-template-plugin/build")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/Volumes/Land00m/GitHub/cmake-template-plugin/Build")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

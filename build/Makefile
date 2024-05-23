@@ -60,7 +60,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /Volumes/Land00m/GitHub/cmake-template-plugin
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Volumes/Land00m/GitHub/cmake-template-plugin/build
+CMAKE_BINARY_DIR = /Volumes/Land00m/GitHub/cmake-template-plugin/Build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles /Volumes/Land00m/GitHub/cmake-template-plugin/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles /Volumes/Land00m/GitHub/cmake-template-plugin/Build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -158,7 +158,7 @@ preinstall/fast:
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -P /Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -1605,7 +1605,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -P /Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/VerifyGlobs.cmake
+	$(CMAKE_COMMAND) -P /Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

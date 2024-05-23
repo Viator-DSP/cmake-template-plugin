@@ -52,7 +52,7 @@ add_executable(juce_tools::juceaide IMPORTED)
 # Import target "juce_tools::juceaide" for configuration "Debug"
 set_property(TARGET juce_tools::juceaide APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(juce_tools::juceaide PROPERTIES
-  IMPORTED_LOCATION_DEBUG "/Volumes/Land00m/GitHub/cmake-template-plugin/build/libs/JUCE/tools/extras/Build/juceaide/juceaide_artefacts/Debug/juceaide"
+  IMPORTED_LOCATION_DEBUG "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/libs/JUCE/tools/extras/Build/juceaide/juceaide_artefacts/Debug/juceaide"
   )
 
 # This file does not depend on other imported targets which have

@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Volumes/Land00m/GitHub/cmake-template-plugin/build/libs/JUCE/tools/extras/Build/juceaide/cmake_install.cmake")
+  include("/Volumes/Land00m/GitHub/cmake-template-plugin/Build/libs/JUCE/tools/extras/Build/juceaide/cmake_install.cmake")
 endif()
 

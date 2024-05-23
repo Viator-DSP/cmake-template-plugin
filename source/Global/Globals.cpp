@@ -1,8 +1,6 @@
 #include "Globals.h"
 
-namespace viator_core
-{
-namespace Parameters
+namespace viator_core::Parameters
 {
 
     extern const juce::String inputID = "inputID";
@@ -25,4 +23,4 @@ namespace Parameters
     extern const juce::String stereoName = "Stereo";
 
 }
-}
+

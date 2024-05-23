@@ -12,7 +12,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # SourceFiles at CMakeLists.txt:96 (file)
@@ -35,7 +35,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # SourceFiles at CMakeLists.txt:96 (file)
@@ -62,7 +62,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -92,7 +92,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -110,7 +110,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -226,7 +226,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -414,7 +414,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -590,7 +590,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -665,7 +665,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -1082,7 +1082,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -1129,7 +1129,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -1234,7 +1234,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -1534,7 +1534,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -1558,7 +1558,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -1588,7 +1588,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -1679,7 +1679,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -1743,7 +1743,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -1922,7 +1922,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -2313,7 +2313,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -2390,7 +2390,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -2444,7 +2444,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -2492,7 +2492,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -2519,7 +2519,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -2543,7 +2543,7 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # all_module_files at libs/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake:189 (file)
@@ -2574,5 +2574,5 @@ set(OLD_GLOB
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake.verify_globs")
 endif()

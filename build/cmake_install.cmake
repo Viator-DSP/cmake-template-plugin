@@ -39,12 +39,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Volumes/Land00m/GitHub/cmake-template-plugin/build/libs/JUCE/cmake_install.cmake")
+  include("/Volumes/Land00m/GitHub/cmake-template-plugin/Build/libs/JUCE/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Volumes/Land00m/GitHub/cmake-template-plugin/build/tests/cmake_install.cmake")
+  include("/Volumes/Land00m/GitHub/cmake-template-plugin/Build/tests/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Volumes/Land00m/GitHub/cmake-template-plugin/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Volumes/Land00m/GitHub/cmake-template-plugin/Build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

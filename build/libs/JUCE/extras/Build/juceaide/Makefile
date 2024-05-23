@@ -60,7 +60,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /Volumes/Land00m/GitHub/cmake-template-plugin
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Volumes/Land00m/GitHub/cmake-template-plugin/build
+CMAKE_BINARY_DIR = /Volumes/Land00m/GitHub/cmake-template-plugin/Build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /Volumes/Land00m/GitHub/cmake-template-plugin/build && $(CMAKE_COMMAND) -E cmake_progress_start /Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles /Volumes/Land00m/GitHub/cmake-template-plugin/build/libs/JUCE/extras/Build/juceaide//CMakeFiles/progress.marks
-	cd /Volumes/Land00m/GitHub/cmake-template-plugin/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/JUCE/extras/Build/juceaide/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles 0
+	cd /Volumes/Land00m/GitHub/cmake-template-plugin/Build && $(CMAKE_COMMAND) -E cmake_progress_start /Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles /Volumes/Land00m/GitHub/cmake-template-plugin/Build/libs/JUCE/extras/Build/juceaide//CMakeFiles/progress.marks
+	cd /Volumes/Land00m/GitHub/cmake-template-plugin/Build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/JUCE/extras/Build/juceaide/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Volumes/Land00m/GitHub/cmake-template-plugin/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/JUCE/extras/Build/juceaide/clean
+	cd /Volumes/Land00m/GitHub/cmake-template-plugin/Build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/JUCE/extras/Build/juceaide/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,18 +148,18 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Volumes/Land00m/GitHub/cmake-template-plugin/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/JUCE/extras/Build/juceaide/preinstall
+	cd /Volumes/Land00m/GitHub/cmake-template-plugin/Build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/JUCE/extras/Build/juceaide/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Volumes/Land00m/GitHub/cmake-template-plugin/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/JUCE/extras/Build/juceaide/preinstall
+	cd /Volumes/Land00m/GitHub/cmake-template-plugin/Build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/JUCE/extras/Build/juceaide/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Volumes/Land00m/GitHub/cmake-template-plugin/build && $(CMAKE_COMMAND) -P /Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/VerifyGlobs.cmake
-	cd /Volumes/Land00m/GitHub/cmake-template-plugin/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Volumes/Land00m/GitHub/cmake-template-plugin/Build && $(CMAKE_COMMAND) -P /Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/VerifyGlobs.cmake
+	cd /Volumes/Land00m/GitHub/cmake-template-plugin/Build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -185,7 +185,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Volumes/Land00m/GitHub/cmake-template-plugin/build && $(CMAKE_COMMAND) -P /Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/VerifyGlobs.cmake
-	cd /Volumes/Land00m/GitHub/cmake-template-plugin/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Volumes/Land00m/GitHub/cmake-template-plugin/Build && $(CMAKE_COMMAND) -P /Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/VerifyGlobs.cmake
+	cd /Volumes/Land00m/GitHub/cmake-template-plugin/Build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

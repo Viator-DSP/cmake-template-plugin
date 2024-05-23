@@ -1,9 +1,7 @@
 #pragma once
 #include <juce_audio_utils/juce_audio_utils.h>
 
-namespace viator_core
-{
-namespace Parameters
+namespace viator_core::Parameters
 {
 
     extern const juce::String inputID;
@@ -26,4 +24,4 @@ namespace Parameters
     extern const juce::String stereoName;
 
 }
-}
+

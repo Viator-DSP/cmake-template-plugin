@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /Volumes/Land00m/GitHub/cmake-template-plugin
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Volumes/Land00m/GitHub/cmake-template-plugin/build
+CMAKE_BINARY_DIR = /Volumes/Land00m/GitHub/cmake-template-plugin/Build
 
 # Utility rule file for cmake-template-project_All.
 
@@ -78,6 +78,6 @@ CMakeFiles/cmake-template-project_All.dir/clean:
 .PHONY : CMakeFiles/cmake-template-project_All.dir/clean
 
 CMakeFiles/cmake-template-project_All.dir/depend:
-	cd /Volumes/Land00m/GitHub/cmake-template-plugin/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Volumes/Land00m/GitHub/cmake-template-plugin /Volumes/Land00m/GitHub/cmake-template-plugin /Volumes/Land00m/GitHub/cmake-template-plugin/build /Volumes/Land00m/GitHub/cmake-template-plugin/build /Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake-template-project_All.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Volumes/Land00m/GitHub/cmake-template-plugin/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Volumes/Land00m/GitHub/cmake-template-plugin /Volumes/Land00m/GitHub/cmake-template-plugin /Volumes/Land00m/GitHub/cmake-template-plugin/Build /Volumes/Land00m/GitHub/cmake-template-plugin/Build /Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake-template-project_All.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/cmake-template-project_All.dir/depend
 

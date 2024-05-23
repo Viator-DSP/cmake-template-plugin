@@ -1,5 +1,5 @@
 CMakeFiles/Assets.dir/juce_binarydata_Assets/JuceLibraryCode/BinaryData1.cpp.o: \
-  /Volumes/Land00m/GitHub/cmake-template-plugin/build/juce_binarydata_Assets/JuceLibraryCode/BinaryData1.cpp \
+  /Volumes/Land00m/GitHub/cmake-template-plugin/Build/juce_binarydata_Assets/JuceLibraryCode/BinaryData1.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/cstring \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__assert \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__config \
@@ -39,4 +39,4 @@ CMakeFiles/Assets.dir/juce_binarydata_Assets/JuceLibraryCode/BinaryData1.cpp.o: 
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/sys/_types/_errno_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/sys/_types/_ssize_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/strings.h \
-  /Volumes/Land00m/GitHub/cmake-template-plugin/build/juce_binarydata_Assets/JuceLibraryCode/BinaryData.h
+  /Volumes/Land00m/GitHub/cmake-template-plugin/Build/juce_binarydata_Assets/JuceLibraryCode/BinaryData.h

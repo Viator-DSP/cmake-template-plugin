@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /Volumes/Land00m/GitHub/cmake-template-plugin
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Volumes/Land00m/GitHub/cmake-template-plugin/build
+CMAKE_BINARY_DIR = /Volumes/Land00m/GitHub/cmake-template-plugin/Build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/cmake-template-project.dir/depend.make
@@ -72,7 +72,7 @@ include CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/source/Global/Globals.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/source/Global/Globals.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/source/Global/Globals.cpp
 CMakeFiles/cmake-template-project.dir/source/Global/Globals.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cmake-template-project.dir/source/Global/Globals.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/cmake-template-project.dir/source/Global/Globals.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/source/Global/Globals.cpp.o -MF CMakeFiles/cmake-template-project.dir/source/Global/Globals.cpp.o.d -o CMakeFiles/cmake-template-project.dir/source/Global/Globals.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/source/Global/Globals.cpp
 
 CMakeFiles/cmake-template-project.dir/source/Global/Globals.cpp.i: cmake_force
@@ -86,7 +86,7 @@ CMakeFiles/cmake-template-project.dir/source/Global/Globals.cpp.s: cmake_force
 CMakeFiles/cmake-template-project.dir/source/Global/Parameters.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/source/Global/Parameters.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/source/Global/Parameters.cpp
 CMakeFiles/cmake-template-project.dir/source/Global/Parameters.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cmake-template-project.dir/source/Global/Parameters.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cmake-template-project.dir/source/Global/Parameters.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/source/Global/Parameters.cpp.o -MF CMakeFiles/cmake-template-project.dir/source/Global/Parameters.cpp.o.d -o CMakeFiles/cmake-template-project.dir/source/Global/Parameters.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/source/Global/Parameters.cpp
 
 CMakeFiles/cmake-template-project.dir/source/Global/Parameters.cpp.i: cmake_force
@@ -100,7 +100,7 @@ CMakeFiles/cmake-template-project.dir/source/Global/Parameters.cpp.s: cmake_forc
 CMakeFiles/cmake-template-project.dir/source/PluginEditor.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/source/PluginEditor.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/source/PluginEditor.cpp
 CMakeFiles/cmake-template-project.dir/source/PluginEditor.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cmake-template-project.dir/source/PluginEditor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cmake-template-project.dir/source/PluginEditor.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/source/PluginEditor.cpp.o -MF CMakeFiles/cmake-template-project.dir/source/PluginEditor.cpp.o.d -o CMakeFiles/cmake-template-project.dir/source/PluginEditor.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/source/PluginEditor.cpp
 
 CMakeFiles/cmake-template-project.dir/source/PluginEditor.cpp.i: cmake_force
@@ -114,7 +114,7 @@ CMakeFiles/cmake-template-project.dir/source/PluginEditor.cpp.s: cmake_force
 CMakeFiles/cmake-template-project.dir/source/PluginProcessor.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/source/PluginProcessor.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/source/PluginProcessor.cpp
 CMakeFiles/cmake-template-project.dir/source/PluginProcessor.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cmake-template-project.dir/source/PluginProcessor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cmake-template-project.dir/source/PluginProcessor.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/source/PluginProcessor.cpp.o -MF CMakeFiles/cmake-template-project.dir/source/PluginProcessor.cpp.o.d -o CMakeFiles/cmake-template-project.dir/source/PluginProcessor.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/source/PluginProcessor.cpp
 
 CMakeFiles/cmake-template-project.dir/source/PluginProcessor.cpp.i: cmake_force
@@ -128,7 +128,7 @@ CMakeFiles/cmake-template-project.dir/source/PluginProcessor.cpp.s: cmake_force
 CMakeFiles/cmake-template-project.dir/source/dsp/filter.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/source/dsp/filter.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/source/dsp/filter.cpp
 CMakeFiles/cmake-template-project.dir/source/dsp/filter.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/cmake-template-project.dir/source/dsp/filter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/cmake-template-project.dir/source/dsp/filter.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/source/dsp/filter.cpp.o -MF CMakeFiles/cmake-template-project.dir/source/dsp/filter.cpp.o.d -o CMakeFiles/cmake-template-project.dir/source/dsp/filter.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/source/dsp/filter.cpp
 
 CMakeFiles/cmake-template-project.dir/source/dsp/filter.cpp.i: cmake_force
@@ -142,7 +142,7 @@ CMakeFiles/cmake-template-project.dir/source/dsp/filter.cpp.s: cmake_force
 CMakeFiles/cmake-template-project.dir/source/gui/components/PresetBrowser.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/source/gui/components/PresetBrowser.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/components/PresetBrowser.cpp
 CMakeFiles/cmake-template-project.dir/source/gui/components/PresetBrowser.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/components/PresetBrowser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/components/PresetBrowser.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/source/gui/components/PresetBrowser.cpp.o -MF CMakeFiles/cmake-template-project.dir/source/gui/components/PresetBrowser.cpp.o.d -o CMakeFiles/cmake-template-project.dir/source/gui/components/PresetBrowser.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/components/PresetBrowser.cpp
 
 CMakeFiles/cmake-template-project.dir/source/gui/components/PresetBrowser.cpp.i: cmake_force
@@ -156,7 +156,7 @@ CMakeFiles/cmake-template-project.dir/source/gui/components/PresetBrowser.cpp.s:
 CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/MenuLAF.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/MenuLAF.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/lookandfeel/MenuLAF.cpp
 CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/MenuLAF.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/MenuLAF.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/MenuLAF.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/MenuLAF.cpp.o -MF CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/MenuLAF.cpp.o.d -o CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/MenuLAF.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/lookandfeel/MenuLAF.cpp
 
 CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/MenuLAF.cpp.i: cmake_force
@@ -170,7 +170,7 @@ CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/MenuLAF.cpp.s: cmak
 CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/TextButtonLAF.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/TextButtonLAF.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/lookandfeel/TextButtonLAF.cpp
 CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/TextButtonLAF.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/TextButtonLAF.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/TextButtonLAF.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/TextButtonLAF.cpp.o -MF CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/TextButtonLAF.cpp.o.d -o CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/TextButtonLAF.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/lookandfeel/TextButtonLAF.cpp
 
 CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/TextButtonLAF.cpp.i: cmake_force
@@ -184,7 +184,7 @@ CMakeFiles/cmake-template-project.dir/source/gui/lookandfeel/TextButtonLAF.cpp.s
 CMakeFiles/cmake-template-project.dir/source/gui/panels/ExtrasPage.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/source/gui/panels/ExtrasPage.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/panels/ExtrasPage.cpp
 CMakeFiles/cmake-template-project.dir/source/gui/panels/ExtrasPage.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/panels/ExtrasPage.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/panels/ExtrasPage.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/source/gui/panels/ExtrasPage.cpp.o -MF CMakeFiles/cmake-template-project.dir/source/gui/panels/ExtrasPage.cpp.o.d -o CMakeFiles/cmake-template-project.dir/source/gui/panels/ExtrasPage.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/panels/ExtrasPage.cpp
 
 CMakeFiles/cmake-template-project.dir/source/gui/panels/ExtrasPage.cpp.i: cmake_force
@@ -198,7 +198,7 @@ CMakeFiles/cmake-template-project.dir/source/gui/panels/ExtrasPage.cpp.s: cmake_
 CMakeFiles/cmake-template-project.dir/source/gui/panels/Header.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/source/gui/panels/Header.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/panels/Header.cpp
 CMakeFiles/cmake-template-project.dir/source/gui/panels/Header.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/panels/Header.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/panels/Header.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/source/gui/panels/Header.cpp.o -MF CMakeFiles/cmake-template-project.dir/source/gui/panels/Header.cpp.o.d -o CMakeFiles/cmake-template-project.dir/source/gui/panels/Header.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/panels/Header.cpp
 
 CMakeFiles/cmake-template-project.dir/source/gui/panels/Header.cpp.i: cmake_force
@@ -212,7 +212,7 @@ CMakeFiles/cmake-template-project.dir/source/gui/panels/Header.cpp.s: cmake_forc
 CMakeFiles/cmake-template-project.dir/source/gui/panels/InfoPopup.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/source/gui/panels/InfoPopup.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/panels/InfoPopup.cpp
 CMakeFiles/cmake-template-project.dir/source/gui/panels/InfoPopup.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/panels/InfoPopup.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/panels/InfoPopup.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/source/gui/panels/InfoPopup.cpp.o -MF CMakeFiles/cmake-template-project.dir/source/gui/panels/InfoPopup.cpp.o.d -o CMakeFiles/cmake-template-project.dir/source/gui/panels/InfoPopup.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/panels/InfoPopup.cpp
 
 CMakeFiles/cmake-template-project.dir/source/gui/panels/InfoPopup.cpp.i: cmake_force
@@ -226,7 +226,7 @@ CMakeFiles/cmake-template-project.dir/source/gui/panels/InfoPopup.cpp.s: cmake_f
 CMakeFiles/cmake-template-project.dir/source/gui/panels/NavBar.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/source/gui/panels/NavBar.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/panels/NavBar.cpp
 CMakeFiles/cmake-template-project.dir/source/gui/panels/NavBar.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/panels/NavBar.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/panels/NavBar.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/source/gui/panels/NavBar.cpp.o -MF CMakeFiles/cmake-template-project.dir/source/gui/panels/NavBar.cpp.o.d -o CMakeFiles/cmake-template-project.dir/source/gui/panels/NavBar.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/panels/NavBar.cpp
 
 CMakeFiles/cmake-template-project.dir/source/gui/panels/NavBar.cpp.i: cmake_force
@@ -240,7 +240,7 @@ CMakeFiles/cmake-template-project.dir/source/gui/panels/NavBar.cpp.s: cmake_forc
 CMakeFiles/cmake-template-project.dir/source/gui/widgets/Menu.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/source/gui/widgets/Menu.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/widgets/Menu.cpp
 CMakeFiles/cmake-template-project.dir/source/gui/widgets/Menu.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/widgets/Menu.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/widgets/Menu.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/source/gui/widgets/Menu.cpp.o -MF CMakeFiles/cmake-template-project.dir/source/gui/widgets/Menu.cpp.o.d -o CMakeFiles/cmake-template-project.dir/source/gui/widgets/Menu.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/widgets/Menu.cpp
 
 CMakeFiles/cmake-template-project.dir/source/gui/widgets/Menu.cpp.i: cmake_force
@@ -254,7 +254,7 @@ CMakeFiles/cmake-template-project.dir/source/gui/widgets/Menu.cpp.s: cmake_force
 CMakeFiles/cmake-template-project.dir/source/gui/widgets/TextButton.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/source/gui/widgets/TextButton.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/widgets/TextButton.cpp
 CMakeFiles/cmake-template-project.dir/source/gui/widgets/TextButton.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/widgets/TextButton.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/cmake-template-project.dir/source/gui/widgets/TextButton.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/source/gui/widgets/TextButton.cpp.o -MF CMakeFiles/cmake-template-project.dir/source/gui/widgets/TextButton.cpp.o.d -o CMakeFiles/cmake-template-project.dir/source/gui/widgets/TextButton.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/widgets/TextButton.cpp
 
 CMakeFiles/cmake-template-project.dir/source/gui/widgets/TextButton.cpp.i: cmake_force
@@ -268,7 +268,7 @@ CMakeFiles/cmake-template-project.dir/source/gui/widgets/TextButton.cpp.s: cmake
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_ara.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_ara.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_ara.cpp
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_ara.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_ara.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_ara.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_ara.cpp.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_ara.cpp.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_ara.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_ara.cpp
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_ara.cpp.i: cmake_force
@@ -282,7 +282,7 @@ CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/ju
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors_lv2_libs.cpp.i: cmake_force
@@ -296,7 +296,7 @@ CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/ju
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors.mm.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors.mm.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_audio_processors/juce_audio_processors.mm
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors.mm.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors.mm.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors.mm.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors.mm.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors.mm.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_audio_processors/juce_audio_processors.mm
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/juce_audio_processors.mm.i: cmake_force
@@ -310,7 +310,7 @@ CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_processors/ju
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_extra/juce_gui_extra.mm.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_extra/juce_gui_extra.mm.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_gui_extra/juce_gui_extra.mm
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_extra/juce_gui_extra.mm.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_extra/juce_gui_extra.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_extra/juce_gui_extra.mm.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_extra/juce_gui_extra.mm.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_extra/juce_gui_extra.mm.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_extra/juce_gui_extra.mm.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_gui_extra/juce_gui_extra.mm
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_extra/juce_gui_extra.mm.i: cmake_force
@@ -324,7 +324,7 @@ CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_extra/juce_gui_
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_basics/juce_gui_basics.mm.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_basics/juce_gui_basics.mm.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_gui_basics/juce_gui_basics.mm
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_basics/juce_gui_basics.mm.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_basics/juce_gui_basics.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_basics/juce_gui_basics.mm.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_basics/juce_gui_basics.mm.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_basics/juce_gui_basics.mm.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_basics/juce_gui_basics.mm.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_gui_basics/juce_gui_basics.mm
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_basics/juce_gui_basics.mm.i: cmake_force
@@ -338,7 +338,7 @@ CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_gui_basics/juce_gui
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_graphics/juce_graphics.mm.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_graphics/juce_graphics.mm.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_graphics/juce_graphics.mm
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_graphics/juce_graphics.mm.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_graphics/juce_graphics.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_graphics/juce_graphics.mm.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_graphics/juce_graphics.mm.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_graphics/juce_graphics.mm.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_graphics/juce_graphics.mm.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_graphics/juce_graphics.mm
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_graphics/juce_graphics.mm.i: cmake_force
@@ -352,7 +352,7 @@ CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_graphics/juce_graph
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_events/juce_events.mm.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_events/juce_events.mm.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_events/juce_events.mm
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_events/juce_events.mm.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_events/juce_events.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_events/juce_events.mm.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_events/juce_events.mm.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_events/juce_events.mm.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_events/juce_events.mm.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_events/juce_events.mm
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_events/juce_events.mm.i: cmake_force
@@ -366,7 +366,7 @@ CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_events/juce_events.
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_core/juce_core.mm.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_core/juce_core.mm.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_core/juce_core.mm
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_core/juce_core.mm.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_core/juce_core.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_core/juce_core.mm.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_core/juce_core.mm.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_core/juce_core.mm.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_core/juce_core.mm.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_core/juce_core.mm
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_core/juce_core.mm.i: cmake_force
@@ -380,7 +380,7 @@ CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_core/juce_core.mm.s
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_data_structures/juce_data_structures.mm.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_data_structures/juce_data_structures.mm.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_data_structures/juce_data_structures.mm
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_data_structures/juce_data_structures.mm.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_data_structures/juce_data_structures.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_data_structures/juce_data_structures.mm.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_data_structures/juce_data_structures.mm.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_data_structures/juce_data_structures.mm.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_data_structures/juce_data_structures.mm.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_data_structures/juce_data_structures.mm
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_data_structures/juce_data_structures.mm.i: cmake_force
@@ -394,7 +394,7 @@ CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_data_structures/juc
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_basics/juce_audio_basics.mm.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_basics/juce_audio_basics.mm.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_audio_basics/juce_audio_basics.mm
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_basics/juce_audio_basics.mm.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_basics/juce_audio_basics.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_basics/juce_audio_basics.mm.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_basics/juce_audio_basics.mm.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_basics/juce_audio_basics.mm.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_basics/juce_audio_basics.mm.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_audio_basics/juce_audio_basics.mm
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_basics/juce_audio_basics.mm.i: cmake_force
@@ -408,7 +408,7 @@ CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_basics/juce_a
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_dsp/juce_dsp.mm.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_dsp/juce_dsp.mm.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_dsp/juce_dsp.mm
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_dsp/juce_dsp.mm.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_dsp/juce_dsp.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_dsp/juce_dsp.mm.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_dsp/juce_dsp.mm.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_dsp/juce_dsp.mm.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_dsp/juce_dsp.mm.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_dsp/juce_dsp.mm
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_dsp/juce_dsp.mm.i: cmake_force
@@ -422,7 +422,7 @@ CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_dsp/juce_dsp.mm.s: 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_formats/juce_audio_formats.mm.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_formats/juce_audio_formats.mm.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_audio_formats/juce_audio_formats.mm
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_formats/juce_audio_formats.mm.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_formats/juce_audio_formats.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_formats/juce_audio_formats.mm.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_formats/juce_audio_formats.mm.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_formats/juce_audio_formats.mm.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_formats/juce_audio_formats.mm.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_audio_formats/juce_audio_formats.mm
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_formats/juce_audio_formats.mm.i: cmake_force
@@ -436,7 +436,7 @@ CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_formats/juce_
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_utils/juce_audio_utils.mm.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_utils/juce_audio_utils.mm.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_audio_utils/juce_audio_utils.mm
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_utils/juce_audio_utils.mm.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_utils/juce_audio_utils.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_utils/juce_audio_utils.mm.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_utils/juce_audio_utils.mm.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_utils/juce_audio_utils.mm.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_utils/juce_audio_utils.mm.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_audio_utils/juce_audio_utils.mm
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_utils/juce_audio_utils.mm.i: cmake_force
@@ -450,7 +450,7 @@ CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_utils/juce_au
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_devices/juce_audio_devices.mm.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_devices/juce_audio_devices.mm.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_audio_devices/juce_audio_devices.mm
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_devices/juce_audio_devices.mm.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_devices/juce_audio_devices.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_devices/juce_audio_devices.mm.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_devices/juce_audio_devices.mm.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_devices/juce_audio_devices.mm.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_devices/juce_audio_devices.mm.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_audio_devices/juce_audio_devices.mm
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_devices/juce_audio_devices.mm.i: cmake_force
@@ -464,7 +464,7 @@ CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_audio_devices/juce_
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_product_unlocking/juce_product_unlocking.mm.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_product_unlocking/juce_product_unlocking.mm.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_product_unlocking/juce_product_unlocking.mm
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_product_unlocking/juce_product_unlocking.mm.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_product_unlocking/juce_product_unlocking.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_product_unlocking/juce_product_unlocking.mm.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_product_unlocking/juce_product_unlocking.mm.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_product_unlocking/juce_product_unlocking.mm.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_product_unlocking/juce_product_unlocking.mm.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_product_unlocking/juce_product_unlocking.mm
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_product_unlocking/juce_product_unlocking.mm.i: cmake_force
@@ -478,7 +478,7 @@ CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_product_unlocking/j
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_cryptography/juce_cryptography.mm.o: CMakeFiles/cmake-template-project.dir/flags.make
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_cryptography/juce_cryptography.mm.o: /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_cryptography/juce_cryptography.mm
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_cryptography/juce_cryptography.mm.o: CMakeFiles/cmake-template-project.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_cryptography/juce_cryptography.mm.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_cryptography/juce_cryptography.mm.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_cryptography/juce_cryptography.mm.o -MF CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_cryptography/juce_cryptography.mm.o.d -o CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_cryptography/juce_cryptography.mm.o -c /Volumes/Land00m/GitHub/cmake-template-plugin/libs/JUCE/modules/juce_cryptography/juce_cryptography.mm
 
 CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_cryptography/juce_cryptography.mm.i: cmake_force
@@ -557,7 +557,7 @@ cmake-template-project_artefacts/Debug/libcmake-template-project_SharedCode.a: C
 cmake-template-project_artefacts/Debug/libcmake-template-project_SharedCode.a: CMakeFiles/cmake-template-project.dir/libs/JUCE/modules/juce_cryptography/juce_cryptography.mm.o
 cmake-template-project_artefacts/Debug/libcmake-template-project_SharedCode.a: CMakeFiles/cmake-template-project.dir/build.make
 cmake-template-project_artefacts/Debug/libcmake-template-project_SharedCode.a: CMakeFiles/cmake-template-project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking CXX static library cmake-template-project_artefacts/Debug/libcmake-template-project_SharedCode.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking CXX static library cmake-template-project_artefacts/Debug/libcmake-template-project_SharedCode.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/cmake-template-project.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cmake-template-project.dir/link.txt --verbose=$(VERBOSE)
 
@@ -570,6 +570,6 @@ CMakeFiles/cmake-template-project.dir/clean:
 .PHONY : CMakeFiles/cmake-template-project.dir/clean
 
 CMakeFiles/cmake-template-project.dir/depend:
-	cd /Volumes/Land00m/GitHub/cmake-template-plugin/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Volumes/Land00m/GitHub/cmake-template-plugin /Volumes/Land00m/GitHub/cmake-template-plugin /Volumes/Land00m/GitHub/cmake-template-plugin/build /Volumes/Land00m/GitHub/cmake-template-plugin/build /Volumes/Land00m/GitHub/cmake-template-plugin/build/CMakeFiles/cmake-template-project.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Volumes/Land00m/GitHub/cmake-template-plugin/Build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Volumes/Land00m/GitHub/cmake-template-plugin /Volumes/Land00m/GitHub/cmake-template-plugin /Volumes/Land00m/GitHub/cmake-template-plugin/Build /Volumes/Land00m/GitHub/cmake-template-plugin/Build /Volumes/Land00m/GitHub/cmake-template-plugin/Build/CMakeFiles/cmake-template-project.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/cmake-template-project.dir/depend
 

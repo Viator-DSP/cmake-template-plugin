@@ -1341,7 +1341,7 @@ CMakeFiles/cmake-template-project.dir/source/gui/panels/Header.cpp.o: \
   /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/panels/../components/../lookandfeel/Colors.h \
   /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/panels/../widgets/TextButton.h \
   /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/components/PresetBrowser.h \
-  /Volumes/Land00m/GitHub/cmake-template-plugin/build/juce_binarydata_Assets/JuceLibraryCode/BinaryData.h \
+  /Volumes/Land00m/GitHub/cmake-template-plugin/Build/juce_binarydata_Assets/JuceLibraryCode/BinaryData.h \
   /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/panels/../widgets/Menu.h \
   /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/panels/../../Global/Parameters.h \
   /Volumes/Land00m/GitHub/cmake-template-plugin/source/gui/panels/../../PluginProcessor.h \
