@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libAssets.a CMakeFiles/Assets.dir/juce_binarydata_Assets/JuceLibraryCode/BinaryData1.cpp.o CMakeFiles/Assets.dir/juce_binarydata_Assets/JuceLibraryCode/BinaryData2.cpp.o CMakeFiles/Assets.dir/juce_binarydata_Assets/JuceLibraryCode/BinaryData3.cpp.o CMakeFiles/Assets.dir/juce_binarydata_Assets/JuceLibraryCode/BinaryData4.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libAssets.a

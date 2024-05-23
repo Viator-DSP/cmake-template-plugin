@@ -3,5 +3,6 @@ cmake-build-release
 *viatordsp-core
 .idea/**
 .DS_Store
+.a
 
 *.pdb

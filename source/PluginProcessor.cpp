@@ -2,6 +2,9 @@
 #include "PluginEditor.h"
 
 //==============================================================================
+
+extern "C" void process_audio(float* mut, int num_channels, int num_samples);
+
 PluginProcessor::PluginProcessor()
     : AudioProcessor(BusesProperties()
 #if !JucePlugin_IsMidiEffect
@@ -201,6 +204,8 @@ void PluginProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
                         static_cast<int>(process_spec.numChannels));
     using param = viator::SVFilter<float>::ParameterId;
     test_filter.setParameter(param::kQType, viator::SVFilter<float>::QType::kParametric);
+    data.clear();
+    data.resize(process_spec.numChannels);
 }
 
 void PluginProcessor::releaseResources()
@@ -236,15 +241,17 @@ void PluginProcessor::processBlock(juce::AudioBuffer<float> &buffer,
     juce::ignoreUnused(midiMessages);
     updateParameters();
 
-    float* pointers[buffer.getNumSamples()];
     for (int i = 0; i < buffer.getNumChannels(); ++i)
     {
-        pointers[i] = buffer.getWritePointer(i);
+        data[i] = buffer.getWritePointer(i);
     }
 
-    test_filter.process_buffer(pointers,
-                               buffer.getNumChannels(),
-                               buffer.getNumSamples());
+//    test_filter.process_buffer(data,
+//                               buffer.getNumChannels(),
+//                               buffer.getNumSamples());
+
+   // process_audio(data, buffer.getNumChannels(), buffer.getNumSamples());
+
 }
 
 //==============================================================================
@@ -255,8 +262,8 @@ bool PluginProcessor::hasEditor() const
 
 juce::AudioProcessorEditor *PluginProcessor::createEditor()
 { // Use generic gui for editor for now
-    //return new PluginEditor(*this);
-    return new juce::GenericAudioProcessorEditor(*this);
+    return new PluginEditor(*this);
+    //return new juce::GenericAudioProcessorEditor(*this);
 }
 
 //==============================================================================

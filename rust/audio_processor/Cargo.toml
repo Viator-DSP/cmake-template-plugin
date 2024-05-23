@@ -1,0 +1,12 @@
+[package]
+name = "audio_processor"
+version = "0.1.0"
+edition = "2021"
+
+# Specifies the output library types. Options include "staticlib" and "cdylib".
+[lib]
+crate-type = ["cdylib"]
+
+# Dependencies section
+[dependencies]
+

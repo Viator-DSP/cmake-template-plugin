@@ -15,12 +15,9 @@ public:
     
     void prepare(float sample_rate, int num_channels);
 
-    void process_buffer(float** buffer, int channels, int samples_per_channel)
+    void process_buffer(std::vector<float*>& buffer, int num_channels, int samples_per_channel)
     {
-        if (buffer == nullptr)
-            return;
-
-        for (int channel = 0; channel < channels; channel++)
+        for (int channel = 0; channel < num_channels; channel++)
         {
             for (int sample = 0; sample < samples_per_channel; sample++)
             {
@@ -36,7 +33,7 @@ public:
         const auto z2 = mZ2[ch];
         
         const float x = input;
-            
+
         const double HP = (x - mRCoeff2 * z1 - mGCoeff * z1 - z2) * mInversion;
         const double BP = HP * mGCoeff + z1;
         const double LP = BP * mGCoeff + z2;

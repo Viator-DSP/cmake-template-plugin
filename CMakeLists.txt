@@ -48,6 +48,12 @@ juce_add_plugin("${PROJECT_NAME}"
 
 add_compile_definitions(JUCE_PROJECT_NAME="${PROJECT_NAME}")
 
+# Link the Rust library
+find_library(RUST_LIBRARY NAMES rust audio_processor PATHS ${CMAKE_SOURCE_DIR}/rust/audio_processor/target/release)
+if(NOT RUST_LIBRARY)
+    message(FATAL_ERROR "Rust library not found")
+endif()
+
 # Define SharedCode as an INTERFACE library
 add_library(SharedCode INTERFACE
         source/gui/panels/Header.h
@@ -99,6 +105,7 @@ target_sources("${PROJECT_NAME}" PRIVATE ${SourceFiles})
 target_link_libraries("${PROJECT_NAME}" PRIVATE
         SharedCode
         Assets
+        ${RUST_LIBRARY}
         juce::juce_dsp
         juce::juce_audio_utils
         juce::juce_product_unlocking

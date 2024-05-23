@@ -57,6 +57,7 @@ private:
 
     juce::dsp::ProcessSpec process_spec;
     viator::SVFilter<float> test_filter;
+    std::vector<float*> data;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(PluginProcessor)
 };
