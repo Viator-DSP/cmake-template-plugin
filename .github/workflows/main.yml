@@ -14,6 +14,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
       - name: Setup CMake and necessary tools
         run: |
           choco install cmake
