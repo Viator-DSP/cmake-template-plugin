@@ -27,6 +27,12 @@ jobs:
         with:
           vs-version: "latest"
 
+      - name: Clear CMake cache
+        run: |
+          if (Test-Path Build/CMakeCache.txt) {
+            Remove-Item Build/CMakeCache.txt
+          }
+
       - name: Configure CMake
         run: cmake -B Build -D CMAKE_BUILD_TYPE=Release
 
