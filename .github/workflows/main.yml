@@ -26,8 +26,8 @@ jobs:
 
       - name: Build Plugin Windows VST3 with CMake
         run: |
-          dir
-          cmake .. -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release
+          cd ${GITHUB_WORKSPACE}/cmake-template-plugin  # Ensure this is the correct path
+          cmake . -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release
           cmake --build .
 
       - name: Delete unnecessary files (if still applicable)
@@ -43,6 +43,3 @@ jobs:
         with:
           name: Windows-cmake-template-plugin-VST3-Artifact
           path: Builds\VisualStudio2022\x64\Release\VST3\
-
-
-
