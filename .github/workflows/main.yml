@@ -22,25 +22,33 @@ jobs:
         run: |
           choco install cmake
 
-      - name: Setup Visual Studio Command Prompt
-        run: |
-          $vsDeveloperCmd = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
-          # Check and adjust the path as necessary depending on the installed VS version
-          if (Test-Path $vsDeveloperCmd) {
-            Write-Host "Setting up Visual Studio command line build environment"
-            & "$vsDeveloperCmd" -arch=x64
-          } else {
-            Write-Host "VsDevCmd.bat not found"
-            exit 1
-          }
+      - name: Set up Visual Studio
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          vs-version: "latest"
 
-      - name: Build Plugin Windows VST3 with CMake
-        run: |
-          cmake . -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release
-          cmake --build .
+      - name: Configure CMake
+        run: cmake -B Build -D CMAKE_BUILD_TYPE=Release
 
-      - name: Upload Windows VST3
+      - name: Build
+        run: cmake --build Build --config Release
+
+      - name: Download pluginval
+        run: |
+          curl -L "https://github.com/Tracktion/pluginval/releases/latest/download/pluginval_Windows.zip" -o pluginval.zip
+          Expand-Archive -Path pluginval.zip -DestinationPath .
+
+      - name: Validate Plugin
+        run: |
+          ./pluginval.exe --strictness-level 10 --validate-in-process --verbose --validate Build/*_artefacts/Release/VST3/*.vst3
+
+      - name: Prepare build artifacts
+        run: |
+          mkdir build-Windows
+          Move-Item Build/*_artefacts/Release/VST3/*.vst3 build-Windows/
+
+      - name: Archive build artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: Windows-cmake-template-plugin-VST3-Artifact
-          path: Builds\VisualStudio2022\x64\Release\VST3\
+          name: build-Windows
+          path: build-Windows/
