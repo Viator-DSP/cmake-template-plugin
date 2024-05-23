@@ -1,1 +1,41 @@
 
+name: Build Pipeline
+
+on:
+  pull_request:
+    branches:
+      - production
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Setup CMake and necessary tools
+        run: |
+          choco install cmake
+          choco install make  # If using make as your generator, otherwise install the appropriate build tool
+
+      - name: Build Plugin Windows VST3 with CMake
+        run: |
+          mkdir build
+          cd build
+          cmake .. -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release
+          cmake --build .
+
+      - name: Delete unnecessary files (if still applicable)
+        run: |
+          del /S /Q *.pdb *.iobj *.exp *.lib  # Adjust as necessary based on your build output
+
+      - name: Validate Windows VST3
+        run: |
+          Pluginval\pluginval.exe --strictness-level 5 --validate-in-process --verbose --validate Builds\VisualStudio2022\x64\Release\VST3\cmake-template-plugin.vst3 || exit 1
+
+      - name: Upload Windows VST3
+        uses: actions/upload-artifact@v3
+        with:
+          name: Windows-cmake-template-plugin-VST3-Artifact
+          path: Builds\VisualStudio2022\x64\Release\VST3\
+
+
+
