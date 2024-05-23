@@ -24,6 +24,11 @@ jobs:
           choco install cmake
           choco install make  # If using make as your generator, otherwise install the appropriate build tool
 
+      - name: Set up Visual Studio
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          vs-version: "latest"
+
       - name: Build Plugin Windows VST3 with CMake
         run: |
           cmake . -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release
