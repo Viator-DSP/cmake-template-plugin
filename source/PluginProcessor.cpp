@@ -241,17 +241,6 @@ void PluginProcessor::processBlock(juce::AudioBuffer<float> &buffer,
     juce::ignoreUnused(midiMessages);
     updateParameters();
 
-    for (int i = 0; i < buffer.getNumChannels(); ++i)
-    {
-        data[i] = buffer.getWritePointer(i);
-    }
-
-//    test_filter.process_buffer(data,
-//                               buffer.getNumChannels(),
-//                               buffer.getNumSamples());
-
-   // process_audio(data, buffer.getNumChannels(), buffer.getNumSamples());
-
 }
 
 //==============================================================================
