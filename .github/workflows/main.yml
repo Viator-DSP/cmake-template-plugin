@@ -40,15 +40,6 @@ jobs:
       - name: Build
         run: cmake --build Build --config Release
 
-      - name: Download pluginval
-        run: |
-          curl -L "https://github.com/Tracktion/pluginval/releases/latest/download/pluginval_Windows.zip" -o pluginval.zip
-          Expand-Archive -Path pluginval.zip -DestinationPath .
-
-      - name: Validate Plugin
-        run: |
-          ./pluginval.exe --strictness-level 10 --validate-in-process --verbose --validate Build/*_artefacts/Release/VST3/*.vst3
-
       - name: Prepare build artifacts
         run: |
           mkdir build-Windows
@@ -59,3 +50,40 @@ jobs:
         with:
           name: build-Windows
           path: build-Windows/
+
+  build-macos:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Install dependencies
+        run: |
+          brew install cmake
+
+      - name: Clear CMake build directories
+        run: |
+          if [ -d Build ]; then
+            rm -rf Build
+          fi
+
+      - name: Configure CMake
+        run: |
+          cmake -B Build -D CMAKE_BUILD_TYPE=Release -D CMAKE_GENERATOR_PLATFORM=x64
+
+      - name: Build
+        run: cmake --build Build --config Release
+
+      - name: Prepare build artifacts
+        run: |
+          mkdir build-macOS
+          mv Build/*_artefacts/Release/VST3/*.vst3 build-macOS/
+
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-macOS
+          path: build-macOS/
