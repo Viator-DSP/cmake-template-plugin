@@ -64,6 +64,9 @@ jobs:
         run: |
           brew install cmake
 
+      - name: Install Xcode Command Line Tools
+        run: xcode-select --install
+
       - name: Clear CMake build directories
         run: |
           if [ -d Build ]; then
@@ -71,8 +74,7 @@ jobs:
           fi
 
       - name: Configure CMake
-        run: |
-          cmake -B Build -D CMAKE_BUILD_TYPE=Release -D CMAKE_GENERATOR_PLATFORM=x64
+        run: cmake -B Build -D CMAKE_BUILD_TYPE=Release
 
       - name: Build
         run: cmake --build Build --config Release
