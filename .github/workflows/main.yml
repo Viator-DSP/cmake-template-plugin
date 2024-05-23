@@ -79,13 +79,14 @@ jobs:
       - name: Build
         run: cmake --build Build --config Release
 
-      - name: Prepare build artifacts
-        run: |
-          mkdir build-macOS
-          mv Build/*_artefacts/Release/VST3/*.vst3 build-macOS/
-
-      - name: Archive build artifacts
+      - name: Upload Mac AU
         uses: actions/upload-artifact@v3
         with:
-          name: build-macOS
-          path: build-macOS/
+          name: Mac-viator-duplex-comp-AU-Artifact
+          path: ~/Library/Audio/Plug-Ins/Components/
+
+      - name: Upload Mac VST3
+        uses: actions/upload-artifact@v3
+        with:
+          name: Mac-viator-duplex-comp-VST3-Artifact
+          path: ~/Library/Audio/Plug-Ins/VST3/
