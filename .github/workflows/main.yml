@@ -26,7 +26,8 @@ jobs:
 
       - name: Build Plugin Windows VST3 with CMake
         run: |
-          cd ${GITHUB_WORKSPACE}/cmake-template-plugin  # Ensure this is the correct path
+          cd ${GITHUB_WORKSPACE}/cmake-template-plugin/cmake-template-plugin
+          dir
           cmake . -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release
           cmake --build .
 
