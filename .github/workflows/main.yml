@@ -26,8 +26,7 @@ jobs:
 
       - name: Build Plugin Windows VST3 with CMake
         run: |
-          dir
-#          cmake . -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release
+          cmake . -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release
 #          cmake --build .
 
 #      - name: Delete unnecessary files (if still applicable)
