@@ -1,4 +1,3 @@
-
 name: Build Pipeline
 
 on:
@@ -22,25 +21,23 @@ jobs:
       - name: Setup CMake and necessary tools
         run: |
           choco install cmake
-          choco install make  # If using make as your generator, otherwise install the appropriate build tool
 
-      - name: Set up Visual Studio
-        uses: microsoft/setup-msbuild@v1.1
-        with:
-          vs-version: "latest"
+      - name: Setup Visual Studio Command Prompt
+        run: |
+          $vsDeveloperCmd = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\VsDevCmd.bat"
+          # Check and adjust the path as necessary depending on the installed VS version
+          if (Test-Path $vsDeveloperCmd) {
+            Write-Host "Setting up Visual Studio command line build environment"
+            & "$vsDeveloperCmd" -arch=x64
+          } else {
+            Write-Host "VsDevCmd.bat not found"
+            exit 1
+          }
 
       - name: Build Plugin Windows VST3 with CMake
         run: |
           cmake . -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release
-#          cmake --build .
-
-#      - name: Delete unnecessary files (if still applicable)
-#        run: |
-#          del /S /Q *.pdb *.iobj *.exp *.lib  # Adjust as necessary based on your build output
-#
-#      - name: Validate Windows VST3
-#        run: |
-#          Pluginval\pluginval.exe --strictness-level 5 --validate-in-process --verbose --validate Builds\VisualStudio2022\x64\Release\VST3\cmake-template-plugin.vst3 || exit 1
+          cmake --build .
 
       - name: Upload Windows VST3
         uses: actions/upload-artifact@v3
